@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🇬🇭 Ghana Mobile Money ETL Pipeline
 
 ![Python](https://img.shields.io/badge/Python-3.14-blue?style=flat-square&logo=python)
@@ -145,3 +146,6 @@ python etl_pipeline.py
 **Lawrence**
 BSc. Information Technology — Data Engineering | University of Cape Coast, Ghana
 🔗 [LinkedIn](https://linkedin.com/in/YOUR_LINKEDIN) | [GitHub](https://github.com/YOUR_USERNAME)
+=======
+# Ghana-Momo-ETL-Pipeline
+>>>>>>> 3ea5197148ee71dd7a4504538067fc91fa6484ea

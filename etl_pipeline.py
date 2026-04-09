@@ -9,7 +9,8 @@ Pipeline Flow:
     Transform -> clean, validate, enrich, flag anomalies
     Load     -> PostgreSQL data warehouse (or CSV fallback)
 
-Author: Lawrence
+Author: Lawrence Koomson
+GitHub: github.com/lawrykoomson
 """
 
 import pandas as pd
@@ -43,22 +44,22 @@ logger = logging.getLogger(__name__)
 # ─────────────────────────────────────────────
 DB_CONFIG = {
     "host":     os.getenv("DB_HOST", "localhost"),
-    "port":     os.getenv("DB_PORT", 5432),
+    "port":     int(os.getenv("DB_PORT", 5432)),
     "database": os.getenv("DB_NAME", "momo_warehouse"),
     "user":     os.getenv("DB_USER", "postgres"),
     "password": os.getenv("DB_PASSWORD", ""),
 }
 
-RAW_DATA_PATH = Path("data/raw/transactions.csv")
+RAW_DATA_PATH  = Path("data/raw/transactions.csv")
 PROCESSED_PATH = Path("data/processed/")
 
 TRANSACTION_TYPES = {
-    "P2P":    "Peer to Peer Transfer",
-    "MBP":    "Merchant Bill Payment",
-    "WDR":    "Withdrawal",
-    "DEP":    "Deposit",
-    "INTL":   "International Transfer",
-    "AIRTIME":"Airtime Top-Up",
+    "P2P":     "Peer to Peer Transfer",
+    "MBP":     "Merchant Bill Payment",
+    "WDR":     "Withdrawal",
+    "DEP":     "Deposit",
+    "INTL":    "International Transfer",
+    "AIRTIME": "Airtime Top-Up",
 }
 
 OPERATORS = ["MTN", "Vodafone", "AirtelTigo"]
@@ -114,13 +115,16 @@ def generate_synthetic_data(n: int = 10000) -> pd.DataFrame:
         "fee":              (amounts * np.random.uniform(0.005, 0.015, n)).round(2).astype(str),
     })
 
-    # Inject dirty records deliberately (to show the cleaning step)
-    dirty = np.random.choice(n, 300, replace=False)
-    df.loc[dirty[:100], "amount"]         = "N/A"
-    df.loc[dirty[100:200], "transaction_id"] = None
-    df.loc[dirty[200:], "timestamp"]      = "invalid_date"
+    # Inject dirty records — scale with n so tests with small n don't break
+    n_dirty = min(300, int(n * 0.03))
+    dirty   = np.random.choice(n, n_dirty, replace=False)
+    third   = n_dirty // 3
 
-    logger.info(f"[EXTRACT] Generated {n:,} synthetic records (300 dirty records injected for demo)")
+    df.loc[dirty[:third], "amount"]               = "N/A"
+    df.loc[dirty[third:third*2], "transaction_id"] = None
+    df.loc[dirty[third*2:], "timestamp"]           = "invalid_date"
+
+    logger.info(f"[EXTRACT] Generated {n:,} synthetic records ({n_dirty} dirty records injected for demo)")
     return df
 
 
@@ -129,26 +133,26 @@ def generate_synthetic_data(n: int = 10000) -> pd.DataFrame:
 # ─────────────────────────────────────────────
 def transform(df: pd.DataFrame) -> tuple:
     logger.info(f"[TRANSFORM] Starting on {len(df):,} raw records...")
-    report = {"raw_count": len(df), "issues": {}}
+    report = {"raw_count": int(len(df)), "issues": {}}
 
     # 1. Drop duplicate / null transaction IDs
     before = len(df)
     df = df.dropna(subset=["transaction_id"]).drop_duplicates(subset=["transaction_id"])
-    report["issues"]["duplicate_or_null_ids"] = before - len(df)
+    report["issues"]["duplicate_or_null_ids"] = int(before - len(df))
     logger.info(f"[TRANSFORM] Removed {before - len(df)} duplicate/null IDs")
 
     # 2. Parse timestamps
     df["timestamp"] = pd.to_datetime(df["timestamp"], errors="coerce")
-    bad_ts = df["timestamp"].isna().sum()
-    report["issues"]["invalid_timestamps"] = int(bad_ts)
+    bad_ts = int(df["timestamp"].isna().sum())
+    report["issues"]["invalid_timestamps"] = bad_ts
     df = df.dropna(subset=["timestamp"])
     logger.info(f"[TRANSFORM] Dropped {bad_ts} rows with invalid timestamps")
 
     # 3. Clean amounts
     df["amount"] = pd.to_numeric(df["amount"], errors="coerce")
     df["fee"]    = pd.to_numeric(df["fee"],    errors="coerce").fillna(0)
-    bad_amt = df["amount"].isna().sum()
-    report["issues"]["invalid_amounts"] = int(bad_amt)
+    bad_amt = int(df["amount"].isna().sum())
+    report["issues"]["invalid_amounts"] = bad_amt
     df = df.dropna(subset=["amount"])
     df = df[df["amount"] > 0]
     logger.info(f"[TRANSFORM] Removed {bad_amt} rows with invalid amounts")
@@ -189,10 +193,10 @@ def transform(df: pd.DataFrame) -> tuple:
     # 10. Total debit
     df["total_debit"] = (df["amount"] + df["fee"]).round(2)
 
-    report["clean_count"]             = len(df)
-    report["high_value_flagged"]      = int(df["is_high_value"].sum())
-    report["rapid_succession_flagged"]= int(df["is_rapid_succession"].sum())
-    report["success_rate_pct"]        = round((df["status"] == "SUCCESS").mean() * 100, 2)
+    report["clean_count"]              = int(len(df))
+    report["high_value_flagged"]       = int(df["is_high_value"].sum())
+    report["rapid_succession_flagged"] = int(df["is_rapid_succession"].sum())
+    report["success_rate_pct"]         = float(round((df["status"] == "SUCCESS").mean() * 100, 2))
 
     logger.info(f"[TRANSFORM] Done. Clean records: {len(df):,} | Success rate: {report['success_rate_pct']}%")
     return df, report
@@ -260,17 +264,22 @@ def load(df: pd.DataFrame, report: dict):
         with conn.cursor() as cur:
             execute_values(cur,
                 f"INSERT INTO momo_dw.fact_transactions ({','.join(cols)}) VALUES %s "
-                f"ON CONFLICT (transaction_id) DO UPDATE SET status=EXCLUDED.status, loaded_at=NOW()",
+                f"ON CONFLICT (transaction_id) DO UPDATE SET "
+                f"status=EXCLUDED.status, loaded_at=NOW()",
                 records, page_size=500
             )
             cur.execute("""
                 INSERT INTO momo_dw.pipeline_runs
-                (raw_count,clean_count,high_value_flagged,rapid_succession_flagged,success_rate_pct,issues)
+                (raw_count,clean_count,high_value_flagged,
+                 rapid_succession_flagged,success_rate_pct,issues)
                 VALUES (%s,%s,%s,%s,%s,%s)
             """, (
-                report["raw_count"], report["clean_count"],
-                report["high_value_flagged"], report["rapid_succession_flagged"],
-                report["success_rate_pct"], json.dumps(report["issues"])
+                int(report["raw_count"]),
+                int(report["clean_count"]),
+                int(report["high_value_flagged"]),
+                int(report["rapid_succession_flagged"]),
+                float(report["success_rate_pct"]),
+                json.dumps(report["issues"])
             ))
             conn.commit()
 
@@ -320,8 +329,8 @@ def run_pipeline():
     logger.info("=" * 55)
     start = datetime.now()
 
-    raw_df          = extract(RAW_DATA_PATH)
-    clean_df, rpt   = transform(raw_df)
+    raw_df        = extract(RAW_DATA_PATH)
+    clean_df, rpt = transform(raw_df)
     load(clean_df, rpt)
     print_summary(clean_df, rpt)
 
