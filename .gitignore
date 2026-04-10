@@ -3,4 +3,6 @@ venv/
 __pycache__/
 *.pyc
 pipeline.log
-data/processed/
+dbt/profiles.yml
+dbt/logs/
+dbt/.user.yml
