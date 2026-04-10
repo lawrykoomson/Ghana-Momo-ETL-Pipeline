@@ -1,0 +1,36 @@
+version: 2
+
+sources:
+  - name: momo_dw
+    database: momo_warehouse
+    schema: momo_dw
+    tables:
+      - name: fact_transactions
+        description: "Raw MoMo transaction fact table loaded by ETL pipeline"
+
+models:
+  - name: stg_momo_transactions
+    description: "Staged and cleaned MoMo transactions — single source of truth"
+    columns:
+      - name: transaction_id
+        description: "Unique transaction identifier"
+        tests:
+          - unique
+          - not_null
+
+      - name: transaction_amount_ghs
+        description: "Transaction amount in Ghana Cedis"
+        tests:
+          - not_null
+
+      - name: operator
+        description: "Mobile network operator"
+        tests:
+          - accepted_values:
+              values: ['MTN', 'VODAFONE', 'AIRTELTIGO']
+
+      - name: transaction_status
+        description: "Final status of the transaction"
+        tests:
+          - accepted_values:
+              values: ['SUCCESS', 'FAILED', 'PENDING', 'REVERSED']

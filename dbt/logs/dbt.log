@@ -1,0 +1,2021 @@
+[0m00:49:03.083355 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024FB3872790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024FB38D7510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024FB38D7B90>]}
+
+
+============================== 00:49:03.138035 | 4b3d2c56-e61b-4e68-a381-faa6e44e1192 ==============================
+[0m00:49:03.138035 [info ] [MainThread]: Running with dbt=1.11.8
+[0m00:49:03.140036 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': '.', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'use_colors': 'True', 'invocation_command': 'dbt debug --profiles-dir .', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\DELL\\Documents\\Ghana-Momo-ETL-Pipeline\\dbt\\logs'}
+[0m00:49:03.362574 [info ] [MainThread]: dbt version: 1.11.8
+[0m00:49:03.363574 [info ] [MainThread]: python version: 3.11.9
+[0m00:49:03.364575 [info ] [MainThread]: python path: C:\Users\DELL\Documents\Ghana-Momo-ETL-Pipeline\venv\Scripts\python.exe
+[0m00:49:03.364575 [info ] [MainThread]: os info: Windows-10-10.0.26200-SP0
+[0m00:49:03.560836 [info ] [MainThread]: Using profiles dir at .
+[0m00:49:03.561834 [info ] [MainThread]: Using profiles.yml file at .\profiles.yml
+[0m00:49:03.562797 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\DELL\Documents\Ghana-Momo-ETL-Pipeline\dbt\dbt_project.yml
+[0m00:49:03.564800 [info ] [MainThread]: adapter type: postgres
+[0m00:49:03.565797 [info ] [MainThread]: adapter version: 1.10.0
+[0m00:49:03.647011 [info ] [MainThread]: Configuration:
+[0m00:49:03.647976 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m00:49:03.648973 [info ] [MainThread]:   dbt_project.yml file [[31mERROR invalid[0m]
+[0m00:49:03.648973 [info ] [MainThread]: Required dependencies:
+[0m00:49:03.650021 [debug] [MainThread]: Executing "git --help"
+[0m00:49:05.237112 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m00:49:05.239103 [debug] [MainThread]: STDERR: "b''"
+[0m00:49:05.241109 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m00:49:05.244233 [info ] [MainThread]: Connection:
+[0m00:49:05.246504 [info ] [MainThread]:   host: localhost
+[0m00:49:05.248535 [info ] [MainThread]:   port: 5432
+[0m00:49:05.250409 [info ] [MainThread]:   user: postgres
+[0m00:49:05.252580 [info ] [MainThread]:   database: momo_warehouse
+[0m00:49:05.257572 [info ] [MainThread]:   schema: momo_dw
+[0m00:49:05.260576 [info ] [MainThread]:   connect_timeout: 10
+[0m00:49:05.263576 [info ] [MainThread]:   role: None
+[0m00:49:05.264569 [info ] [MainThread]:   search_path: None
+[0m00:49:05.266573 [info ] [MainThread]:   keepalives_idle: 0
+[0m00:49:05.268577 [info ] [MainThread]:   sslmode: None
+[0m00:49:05.270571 [info ] [MainThread]:   sslcert: None
+[0m00:49:05.273584 [info ] [MainThread]:   sslkey: None
+[0m00:49:05.276581 [info ] [MainThread]:   sslrootcert: None
+[0m00:49:05.278582 [info ] [MainThread]:   application_name: dbt
+[0m00:49:05.279581 [info ] [MainThread]:   retries: 1
+[0m00:49:05.281586 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m00:49:05.883893 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m00:49:07.054073 [debug] [MainThread]: Using postgres connection "debug"
+[0m00:49:07.054073 [debug] [MainThread]: On debug: select 1 as id
+[0m00:49:07.055074 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m00:49:08.284178 [debug] [MainThread]: SQL status: SELECT 1 in 1.229 seconds
+[0m00:49:08.285182 [debug] [MainThread]: On debug: Close
+[0m00:49:08.286178 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m00:49:08.287174 [info ] [MainThread]: [31m1 check failed:[0m
+[0m00:49:08.288175 [info ] [MainThread]: Project loading failed for the following reason:
+Runtime Error
+  at path []: Additional properties are not allowed ('model-path' was unexpected)
+
+Error encountered in C:\Users\DELL\Documents\Ghana-Momo-ETL-Pipeline\dbt\dbt_project.yml
+
+
+[0m00:49:08.290177 [debug] [MainThread]: Command `dbt debug` failed at 00:49:08.290177 after 5.68 seconds
+[0m00:49:08.291171 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m00:49:08.291171 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024FB3872450>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024FB4956210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024FB48E43D0>]}
+[0m00:49:08.292171 [debug] [MainThread]: Flushing usage events
+[0m00:49:12.967528 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m00:50:45.074736 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000244E8E4F690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000244E8E4EE90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000244E8E4F1D0>]}
+
+
+============================== 00:50:45.079722 | fd853944-b6e7-4f5b-a078-c79a6ad3d71b ==============================
+[0m00:50:45.079722 [info ] [MainThread]: Running with dbt=1.11.8
+[0m00:50:45.081700 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': '.', 'indirect_selection': 'eager', 'use_colors': 'True', 'invocation_command': 'dbt debug --profiles-dir .', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\DELL\\Documents\\Ghana-Momo-ETL-Pipeline\\dbt\\logs'}
+[0m00:50:45.102703 [info ] [MainThread]: dbt version: 1.11.8
+[0m00:50:45.103704 [info ] [MainThread]: python version: 3.11.9
+[0m00:50:45.104822 [info ] [MainThread]: python path: C:\Users\DELL\Documents\Ghana-Momo-ETL-Pipeline\venv\Scripts\python.exe
+[0m00:50:45.105831 [info ] [MainThread]: os info: Windows-10-10.0.26200-SP0
+[0m00:50:45.176344 [info ] [MainThread]: Using profiles dir at .
+[0m00:50:45.178377 [info ] [MainThread]: Using profiles.yml file at .\profiles.yml
+[0m00:50:45.179347 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\DELL\Documents\Ghana-Momo-ETL-Pipeline\dbt\dbt_project.yml
+[0m00:50:45.180344 [info ] [MainThread]: adapter type: postgres
+[0m00:50:45.181379 [info ] [MainThread]: adapter version: 1.10.0
+[0m00:50:45.265977 [info ] [MainThread]: Configuration:
+[0m00:50:45.266940 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m00:50:45.266940 [info ] [MainThread]:   dbt_project.yml file [[31mERROR invalid[0m]
+[0m00:50:45.267992 [info ] [MainThread]: Required dependencies:
+[0m00:50:45.268942 [debug] [MainThread]: Executing "git --help"
+[0m00:50:45.340104 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m00:50:45.341067 [debug] [MainThread]: STDERR: "b''"
+[0m00:50:45.342067 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m00:50:45.342067 [info ] [MainThread]: Connection:
+[0m00:50:45.343066 [info ] [MainThread]:   host: localhost
+[0m00:50:45.344068 [info ] [MainThread]:   port: 5432
+[0m00:50:45.345098 [info ] [MainThread]:   user: postgres
+[0m00:50:45.346028 [info ] [MainThread]:   database: momo_warehouse
+[0m00:50:45.347038 [info ] [MainThread]:   schema: momo_dw
+[0m00:50:45.347038 [info ] [MainThread]:   connect_timeout: 10
+[0m00:50:45.348037 [info ] [MainThread]:   role: None
+[0m00:50:45.349073 [info ] [MainThread]:   search_path: None
+[0m00:50:45.351045 [info ] [MainThread]:   keepalives_idle: 0
+[0m00:50:45.352038 [info ] [MainThread]:   sslmode: None
+[0m00:50:45.353036 [info ] [MainThread]:   sslcert: None
+[0m00:50:45.354057 [info ] [MainThread]:   sslkey: None
+[0m00:50:45.355069 [info ] [MainThread]:   sslrootcert: None
+[0m00:50:45.356037 [info ] [MainThread]:   application_name: dbt
+[0m00:50:45.357034 [info ] [MainThread]:   retries: 1
+[0m00:50:45.359042 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m00:50:45.842437 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m00:50:45.956588 [debug] [MainThread]: Using postgres connection "debug"
+[0m00:50:45.956588 [debug] [MainThread]: On debug: select 1 as id
+[0m00:50:45.957553 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m00:50:46.020144 [debug] [MainThread]: SQL status: SELECT 1 in 0.063 seconds
+[0m00:50:46.021144 [debug] [MainThread]: On debug: Close
+[0m00:50:46.022145 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m00:50:46.023107 [info ] [MainThread]: [31m1 check failed:[0m
+[0m00:50:46.024107 [info ] [MainThread]: Project loading failed for the following reason:
+Runtime Error
+  at path []: Additional properties are not allowed ('model-path' was unexpected)
+
+Error encountered in C:\Users\DELL\Documents\Ghana-Momo-ETL-Pipeline\dbt\dbt_project.yml
+
+
+[0m00:50:46.026108 [debug] [MainThread]: Command `dbt debug` failed at 00:50:46.025109 after 1.07 seconds
+[0m00:50:46.027112 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m00:50:46.028138 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000244E2003390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000244EA1A2410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000244E225C7D0>]}
+[0m00:50:46.029112 [debug] [MainThread]: Flushing usage events
+[0m00:50:47.700101 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m00:53:49.470473 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E63AC12910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E63AC1ED50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E63AC1E990>]}
+
+
+============================== 00:53:49.474467 | 9bf1eb0b-77fb-4316-b055-21ecef774608 ==============================
+[0m00:53:49.474467 [info ] [MainThread]: Running with dbt=1.11.8
+[0m00:53:49.475434 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': '.', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt debug --profiles-dir .', 'indirect_selection': 'eager', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\DELL\\Documents\\Ghana-Momo-ETL-Pipeline\\dbt\\logs'}
+[0m00:53:49.499760 [info ] [MainThread]: dbt version: 1.11.8
+[0m00:53:49.500790 [info ] [MainThread]: python version: 3.11.9
+[0m00:53:49.501752 [info ] [MainThread]: python path: C:\Users\DELL\Documents\Ghana-Momo-ETL-Pipeline\venv\Scripts\python.exe
+[0m00:53:49.502752 [info ] [MainThread]: os info: Windows-10-10.0.26200-SP0
+[0m00:53:49.566966 [info ] [MainThread]: Using profiles dir at .
+[0m00:53:49.567801 [info ] [MainThread]: Using profiles.yml file at .\profiles.yml
+[0m00:53:49.568809 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\DELL\Documents\Ghana-Momo-ETL-Pipeline\dbt\dbt_project.yml
+[0m00:53:49.569848 [info ] [MainThread]: adapter type: postgres
+[0m00:53:49.570810 [info ] [MainThread]: adapter version: 1.10.0
+[0m00:53:49.648896 [info ] [MainThread]: Configuration:
+[0m00:53:49.649862 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m00:53:49.649862 [info ] [MainThread]:   dbt_project.yml file [[31mERROR invalid[0m]
+[0m00:53:49.650903 [info ] [MainThread]: Required dependencies:
+[0m00:53:49.651865 [debug] [MainThread]: Executing "git --help"
+[0m00:53:49.719984 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m00:53:49.721018 [debug] [MainThread]: STDERR: "b''"
+[0m00:53:49.721018 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m00:53:49.722016 [info ] [MainThread]: Connection:
+[0m00:53:49.722982 [info ] [MainThread]:   host: localhost
+[0m00:53:49.722982 [info ] [MainThread]:   port: 5432
+[0m00:53:49.724016 [info ] [MainThread]:   user: postgres
+[0m00:53:49.724983 [info ] [MainThread]:   database: momo_warehouse
+[0m00:53:49.725987 [info ] [MainThread]:   schema: momo_dw
+[0m00:53:49.726984 [info ] [MainThread]:   connect_timeout: 10
+[0m00:53:49.727984 [info ] [MainThread]:   role: None
+[0m00:53:49.728985 [info ] [MainThread]:   search_path: None
+[0m00:53:49.730029 [info ] [MainThread]:   keepalives_idle: 0
+[0m00:53:49.731987 [info ] [MainThread]:   sslmode: None
+[0m00:53:49.732989 [info ] [MainThread]:   sslcert: None
+[0m00:53:49.734987 [info ] [MainThread]:   sslkey: None
+[0m00:53:49.735983 [info ] [MainThread]:   sslrootcert: None
+[0m00:53:49.737983 [info ] [MainThread]:   application_name: dbt
+[0m00:53:49.738983 [info ] [MainThread]:   retries: 1
+[0m00:53:49.739983 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m00:53:50.252349 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m00:53:50.371599 [debug] [MainThread]: Using postgres connection "debug"
+[0m00:53:50.372597 [debug] [MainThread]: On debug: select 1 as id
+[0m00:53:50.373566 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m00:53:50.437182 [debug] [MainThread]: SQL status: SELECT 1 in 0.064 seconds
+[0m00:53:50.439180 [debug] [MainThread]: On debug: Close
+[0m00:53:50.439180 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m00:53:50.440313 [info ] [MainThread]: [31m1 check failed:[0m
+[0m00:53:50.441322 [info ] [MainThread]: Project loading failed for the following reason:
+Runtime Error
+  at path []: Additional properties are not allowed ('model-path' was unexpected)
+
+Error encountered in C:\Users\DELL\Documents\Ghana-Momo-ETL-Pipeline\dbt\dbt_project.yml
+
+
+[0m00:53:50.443322 [debug] [MainThread]: Command `dbt debug` failed at 00:53:50.443322 after 1.10 seconds
+[0m00:53:50.444321 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m00:53:50.445358 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E63BF75F50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E633FEB810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E63AC12910>]}
+[0m00:53:50.445358 [debug] [MainThread]: Flushing usage events
+[0m00:53:57.249743 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m00:54:17.626558 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000290D198EC90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000290D198E290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000290D198ED10>]}
+
+
+============================== 00:54:17.631563 | 829c68ee-0c4d-44b5-98cd-2fe2a068492a ==============================
+[0m00:54:17.631563 [info ] [MainThread]: Running with dbt=1.11.8
+[0m00:54:17.632558 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': '.', 'use_colors': 'True', 'invocation_command': 'dbt debug --profiles-dir .', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\DELL\\Documents\\Ghana-Momo-ETL-Pipeline\\dbt\\logs'}
+[0m00:54:17.657565 [info ] [MainThread]: dbt version: 1.11.8
+[0m00:54:17.659562 [info ] [MainThread]: python version: 3.11.9
+[0m00:54:17.660562 [info ] [MainThread]: python path: C:\Users\DELL\Documents\Ghana-Momo-ETL-Pipeline\venv\Scripts\python.exe
+[0m00:54:17.661594 [info ] [MainThread]: os info: Windows-10-10.0.26200-SP0
+[0m00:54:17.739105 [info ] [MainThread]: Using profiles dir at .
+[0m00:54:17.740106 [info ] [MainThread]: Using profiles.yml file at .\profiles.yml
+[0m00:54:17.741106 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\DELL\Documents\Ghana-Momo-ETL-Pipeline\dbt\dbt_project.yml
+[0m00:54:17.742108 [info ] [MainThread]: adapter type: postgres
+[0m00:54:17.743101 [info ] [MainThread]: adapter version: 1.10.0
+[0m00:54:17.822633 [info ] [MainThread]: Configuration:
+[0m00:54:17.823637 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m00:54:17.824614 [info ] [MainThread]:   dbt_project.yml file [[31mERROR invalid[0m]
+[0m00:54:17.825623 [info ] [MainThread]: Required dependencies:
+[0m00:54:17.825623 [debug] [MainThread]: Executing "git --help"
+[0m00:54:17.896269 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m00:54:17.896269 [debug] [MainThread]: STDERR: "b''"
+[0m00:54:17.897278 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m00:54:17.898241 [info ] [MainThread]: Connection:
+[0m00:54:17.899249 [info ] [MainThread]:   host: localhost
+[0m00:54:17.899249 [info ] [MainThread]:   port: 5432
+[0m00:54:17.900251 [info ] [MainThread]:   user: postgres
+[0m00:54:17.901250 [info ] [MainThread]:   database: momo_warehouse
+[0m00:54:17.902249 [info ] [MainThread]:   schema: momo_dw
+[0m00:54:17.902249 [info ] [MainThread]:   connect_timeout: 10
+[0m00:54:17.903251 [info ] [MainThread]:   role: None
+[0m00:54:17.904251 [info ] [MainThread]:   search_path: None
+[0m00:54:17.905761 [info ] [MainThread]:   keepalives_idle: 0
+[0m00:54:17.906774 [info ] [MainThread]:   sslmode: None
+[0m00:54:17.908779 [info ] [MainThread]:   sslcert: None
+[0m00:54:17.909783 [info ] [MainThread]:   sslkey: None
+[0m00:54:17.910770 [info ] [MainThread]:   sslrootcert: None
+[0m00:54:17.911778 [info ] [MainThread]:   application_name: dbt
+[0m00:54:17.912773 [info ] [MainThread]:   retries: 1
+[0m00:54:17.912773 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m00:54:18.526909 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m00:54:18.690182 [debug] [MainThread]: Using postgres connection "debug"
+[0m00:54:18.691196 [debug] [MainThread]: On debug: select 1 as id
+[0m00:54:18.692192 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m00:54:18.787715 [debug] [MainThread]: SQL status: SELECT 1 in 0.095 seconds
+[0m00:54:18.789722 [debug] [MainThread]: On debug: Close
+[0m00:54:18.790721 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m00:54:18.792734 [info ] [MainThread]: [31m1 check failed:[0m
+[0m00:54:18.793733 [info ] [MainThread]: Project loading failed for the following reason:
+Runtime Error
+  at path []: Additional properties are not allowed ('model-path' was unexpected)
+
+Error encountered in C:\Users\DELL\Documents\Ghana-Momo-ETL-Pipeline\dbt\dbt_project.yml
+
+
+[0m00:54:18.796731 [debug] [MainThread]: Command `dbt debug` failed at 00:54:18.796731 after 1.29 seconds
+[0m00:54:18.797734 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m00:54:18.799733 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000290D2CD2410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000290D198FE50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000290D198D050>]}
+[0m00:54:18.801732 [debug] [MainThread]: Flushing usage events
+[0m00:54:20.688153 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m00:57:56.107426 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F3CD34F490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F3CD34F4D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F3CD34E810>]}
+
+
+============================== 00:57:56.112399 | b3ece579-5c99-4381-8935-1f8c2162e3a7 ==============================
+[0m00:57:56.112399 [info ] [MainThread]: Running with dbt=1.11.8
+[0m00:57:56.113401 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': '.', 'use_colors': 'True', 'invocation_command': 'dbt debug --profiles-dir .', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\DELL\\Documents\\Ghana-Momo-ETL-Pipeline\\dbt\\logs'}
+[0m00:57:56.133991 [info ] [MainThread]: dbt version: 1.11.8
+[0m00:57:56.135122 [info ] [MainThread]: python version: 3.11.9
+[0m00:57:56.136120 [info ] [MainThread]: python path: C:\Users\DELL\Documents\Ghana-Momo-ETL-Pipeline\venv\Scripts\python.exe
+[0m00:57:56.137126 [info ] [MainThread]: os info: Windows-10-10.0.26200-SP0
+[0m00:57:56.204121 [info ] [MainThread]: Using profiles dir at .
+[0m00:57:56.205119 [info ] [MainThread]: Using profiles.yml file at .\profiles.yml
+[0m00:57:56.206123 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\DELL\Documents\Ghana-Momo-ETL-Pipeline\dbt\dbt_project.yml
+[0m00:57:56.207122 [info ] [MainThread]: adapter type: postgres
+[0m00:57:56.208122 [info ] [MainThread]: adapter version: 1.10.0
+[0m00:57:56.382823 [info ] [MainThread]: Configuration:
+[0m00:57:56.388029 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m00:57:56.391040 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m00:57:56.393033 [info ] [MainThread]: Required dependencies:
+[0m00:57:56.394032 [debug] [MainThread]: Executing "git --help"
+[0m00:57:56.496203 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m00:57:56.497199 [debug] [MainThread]: STDERR: "b''"
+[0m00:57:56.498203 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m00:57:56.499206 [info ] [MainThread]: Connection:
+[0m00:57:56.501203 [info ] [MainThread]:   host: localhost
+[0m00:57:56.503206 [info ] [MainThread]:   port: 5432
+[0m00:57:56.504204 [info ] [MainThread]:   user: postgres
+[0m00:57:56.506208 [info ] [MainThread]:   database: momo_warehouse
+[0m00:57:56.507206 [info ] [MainThread]:   schema: momo_dw
+[0m00:57:56.509205 [info ] [MainThread]:   connect_timeout: 10
+[0m00:57:56.510214 [info ] [MainThread]:   role: None
+[0m00:57:56.511219 [info ] [MainThread]:   search_path: None
+[0m00:57:56.512218 [info ] [MainThread]:   keepalives_idle: 0
+[0m00:57:56.514220 [info ] [MainThread]:   sslmode: None
+[0m00:57:56.515216 [info ] [MainThread]:   sslcert: None
+[0m00:57:56.516217 [info ] [MainThread]:   sslkey: None
+[0m00:57:56.517233 [info ] [MainThread]:   sslrootcert: None
+[0m00:57:56.519237 [info ] [MainThread]:   application_name: dbt
+[0m00:57:56.521217 [info ] [MainThread]:   retries: 1
+[0m00:57:56.523217 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m00:57:57.009584 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m00:57:57.138743 [debug] [MainThread]: Using postgres connection "debug"
+[0m00:57:57.139742 [debug] [MainThread]: On debug: select 1 as id
+[0m00:57:57.140742 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m00:57:57.592730 [debug] [MainThread]: SQL status: SELECT 1 in 0.453 seconds
+[0m00:57:57.594728 [debug] [MainThread]: On debug: Close
+[0m00:57:57.594728 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m00:57:57.595728 [info ] [MainThread]: [32mAll checks passed![0m
+[0m00:57:57.597731 [debug] [MainThread]: Command `dbt debug` succeeded at 00:57:57.597731 after 1.60 seconds
+[0m00:57:57.598729 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m00:57:57.599727 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F3C64A3390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F3C672B810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F3C64AC2D0>]}
+[0m00:57:57.599727 [debug] [MainThread]: Flushing usage events
+[0m00:57:59.225591 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m00:58:54.277471 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021C60F9DD50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021C60F9DF50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021C60F9F1D0>]}
+
+
+============================== 00:58:54.284515 | 37cd8e39-f14b-486b-a866-d63cf728ee48 ==============================
+[0m00:58:54.284515 [info ] [MainThread]: Running with dbt=1.11.8
+[0m00:58:54.286495 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': '.', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt run --profiles-dir .', 'indirect_selection': 'eager', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\DELL\\Documents\\Ghana-Momo-ETL-Pipeline\\dbt\\logs'}
+[0m00:58:56.423962 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '37cd8e39-f14b-486b-a866-d63cf728ee48', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021C61270B10>]}
+[0m00:58:56.525152 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '37cd8e39-f14b-486b-a866-d63cf728ee48', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021C5C7095D0>]}
+[0m00:58:56.527151 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m00:58:57.242610 [debug] [MainThread]: checksum: 7d524ac048c2100769df89d592e662e060a73ca564e31bd9c2a37efdfe8d8ab6, vars: {}, profile: , target: , version: 1.11.8
+[0m00:58:57.245609 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m00:58:57.247610 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '37cd8e39-f14b-486b-a866-d63cf728ee48', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021C6104FB50>]}
+[0m00:59:01.489616 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `accepted_values` defined on
+'stg_momo_transactions' in package 'momo_analytics'
+(models\staging\stg_momo_transactions.yml). Arguments to generic tests should be
+nested under the `arguments` property.
+[0m00:59:01.490340 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '37cd8e39-f14b-486b-a866-d63cf728ee48', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021C617E6290>]}
+[0m00:59:01.830351 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '37cd8e39-f14b-486b-a866-d63cf728ee48', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021C618736D0>]}
+[0m00:59:01.988502 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\DELL\Documents\Ghana-Momo-ETL-Pipeline\dbt\target\manifest.json
+[0m00:59:02.055901 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\DELL\Documents\Ghana-Momo-ETL-Pipeline\dbt\target\semantic_manifest.json
+[0m00:59:02.147935 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '37cd8e39-f14b-486b-a866-d63cf728ee48', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021C6148B110>]}
+[0m00:59:02.149937 [info ] [MainThread]: Found 5 models, 5 data tests, 1 source, 465 macros
+[0m00:59:02.159939 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '37cd8e39-f14b-486b-a866-d63cf728ee48', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021C61A66E90>]}
+[0m00:59:02.167936 [info ] [MainThread]: 
+[0m00:59:02.171964 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m00:59:02.174953 [info ] [MainThread]: 
+[0m00:59:02.177953 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m00:59:02.202480 [debug] [ThreadPool]: Acquiring new postgres connection 'list_momo_warehouse'
+[0m00:59:02.236484 [debug] [ThreadPool]: Acquiring new postgres connection 'list_momo_warehouse'
+[0m00:59:02.425788 [debug] [ThreadPool]: Using postgres connection "list_momo_warehouse"
+[0m00:59:02.426793 [debug] [ThreadPool]: Using postgres connection "list_momo_warehouse"
+[0m00:59:02.427793 [debug] [ThreadPool]: On list_momo_warehouse: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "momo_analytics", "target_name": "dev", "connection_name": "list_momo_warehouse"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m00:59:02.428787 [debug] [ThreadPool]: On list_momo_warehouse: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "momo_analytics", "target_name": "dev", "connection_name": "list_momo_warehouse"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m00:59:02.429792 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:59:02.430786 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:59:02.661326 [debug] [ThreadPool]: SQL status: SELECT 5 in 0.230 seconds
+[0m00:59:02.664322 [debug] [ThreadPool]: SQL status: SELECT 5 in 0.234 seconds
+[0m00:59:02.670358 [debug] [ThreadPool]: On list_momo_warehouse: Close
+[0m00:59:02.674417 [debug] [ThreadPool]: On list_momo_warehouse: Close
+[0m00:59:02.678364 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_momo_warehouse, now create_momo_warehouse_momo_dw_marts)
+[0m00:59:02.680368 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_momo_warehouse, now create_momo_warehouse_momo_dw_staging)
+[0m00:59:02.682377 [debug] [ThreadPool]: Creating schema "database: "momo_warehouse"
+schema: "momo_dw_marts"
+"
+[0m00:59:02.684367 [debug] [ThreadPool]: Creating schema "database: "momo_warehouse"
+schema: "momo_dw_staging"
+"
+[0m00:59:02.693934 [debug] [ThreadPool]: Using postgres connection "create_momo_warehouse_momo_dw_marts"
+[0m00:59:02.696931 [debug] [ThreadPool]: Using postgres connection "create_momo_warehouse_momo_dw_staging"
+[0m00:59:02.697936 [debug] [ThreadPool]: On create_momo_warehouse_momo_dw_marts: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "momo_analytics", "target_name": "dev", "connection_name": "create_momo_warehouse_momo_dw_marts"} */
+create schema if not exists "momo_dw_marts"
+[0m00:59:02.698931 [debug] [ThreadPool]: On create_momo_warehouse_momo_dw_staging: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "momo_analytics", "target_name": "dev", "connection_name": "create_momo_warehouse_momo_dw_staging"} */
+create schema if not exists "momo_dw_staging"
+[0m00:59:02.699931 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m00:59:02.699931 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m00:59:02.871181 [debug] [ThreadPool]: SQL status: CREATE SCHEMA in 0.171 seconds
+[0m00:59:02.873280 [debug] [ThreadPool]: SQL status: CREATE SCHEMA in 0.173 seconds
+[0m00:59:02.878272 [debug] [ThreadPool]: On create_momo_warehouse_momo_dw_marts: COMMIT
+[0m00:59:02.883217 [debug] [ThreadPool]: On create_momo_warehouse_momo_dw_staging: COMMIT
+[0m00:59:02.885285 [debug] [ThreadPool]: Using postgres connection "create_momo_warehouse_momo_dw_marts"
+[0m00:59:02.888573 [debug] [ThreadPool]: Using postgres connection "create_momo_warehouse_momo_dw_staging"
+[0m00:59:02.890627 [debug] [ThreadPool]: On create_momo_warehouse_momo_dw_marts: COMMIT
+[0m00:59:02.893568 [debug] [ThreadPool]: On create_momo_warehouse_momo_dw_staging: COMMIT
+[0m00:59:02.901574 [debug] [ThreadPool]: SQL status: COMMIT in 0.006 seconds
+[0m00:59:02.903578 [debug] [ThreadPool]: SQL status: COMMIT in 0.006 seconds
+[0m00:59:02.906566 [debug] [ThreadPool]: On create_momo_warehouse_momo_dw_marts: Close
+[0m00:59:02.911568 [debug] [ThreadPool]: On create_momo_warehouse_momo_dw_staging: Close
+[0m00:59:02.928564 [debug] [ThreadPool]: Acquiring new postgres connection 'list_momo_warehouse_momo_dw_marts'
+[0m00:59:02.932561 [debug] [ThreadPool]: Acquiring new postgres connection 'list_momo_warehouse_momo_dw_staging'
+[0m00:59:02.943599 [debug] [ThreadPool]: Using postgres connection "list_momo_warehouse_momo_dw_marts"
+[0m00:59:02.947564 [debug] [ThreadPool]: Using postgres connection "list_momo_warehouse_momo_dw_staging"
+[0m00:59:02.948038 [debug] [ThreadPool]: On list_momo_warehouse_momo_dw_marts: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "momo_analytics", "target_name": "dev", "connection_name": "list_momo_warehouse_momo_dw_marts"} */
+select
+      'momo_warehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'momo_dw_marts'
+    union all
+    select
+      'momo_warehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'momo_dw_marts'
+    union all
+    select
+      'momo_warehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'momo_dw_marts'
+  
+[0m00:59:02.949072 [debug] [ThreadPool]: On list_momo_warehouse_momo_dw_staging: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "momo_analytics", "target_name": "dev", "connection_name": "list_momo_warehouse_momo_dw_staging"} */
+select
+      'momo_warehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'momo_dw_staging'
+    union all
+    select
+      'momo_warehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'momo_dw_staging'
+    union all
+    select
+      'momo_warehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'momo_dw_staging'
+  
+[0m00:59:02.950047 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:59:02.951049 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:59:03.156763 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.206 seconds
+[0m00:59:03.158797 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.209 seconds
+[0m00:59:03.162758 [debug] [ThreadPool]: On list_momo_warehouse_momo_dw_staging: ROLLBACK
+[0m00:59:03.164759 [debug] [ThreadPool]: On list_momo_warehouse_momo_dw_marts: ROLLBACK
+[0m00:59:03.165752 [debug] [ThreadPool]: On list_momo_warehouse_momo_dw_staging: Close
+[0m00:59:03.166761 [debug] [ThreadPool]: On list_momo_warehouse_momo_dw_marts: Close
+[0m00:59:03.178764 [debug] [MainThread]: Using postgres connection "master"
+[0m00:59:03.179766 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "momo_analytics", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m00:59:03.180762 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m00:59:03.314609 [debug] [MainThread]: SQL status: SELECT 0 in 0.134 seconds
+[0m00:59:03.318613 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '37cd8e39-f14b-486b-a866-d63cf728ee48', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021C61E970D0>]}
+[0m00:59:03.319607 [debug] [MainThread]: On master: ROLLBACK
+[0m00:59:03.321609 [debug] [MainThread]: On master: COMMIT
+[0m00:59:03.323607 [debug] [MainThread]: Using postgres connection "master"
+[0m00:59:03.324609 [debug] [MainThread]: On master: COMMIT
+[0m00:59:03.326610 [debug] [MainThread]: SQL status: COMMIT in 0.001 seconds
+[0m00:59:03.327611 [debug] [MainThread]: On master: Close
+[0m00:59:03.363604 [debug] [Thread-1 (]: Began running node model.momo_analytics.stg_momo_transactions
+[0m00:59:03.365608 [info ] [Thread-1 (]: 1 of 5 START sql view model momo_dw_staging.stg_momo_transactions .............. [RUN]
+[0m00:59:03.369609 [debug] [Thread-1 (]: Acquiring new postgres connection 'model.momo_analytics.stg_momo_transactions'
+[0m00:59:03.370613 [debug] [Thread-1 (]: Began compiling node model.momo_analytics.stg_momo_transactions
+[0m00:59:03.403742 [debug] [Thread-1 (]: Writing injected SQL for node "model.momo_analytics.stg_momo_transactions"
+[0m00:59:03.410103 [debug] [Thread-1 (]: Began executing node model.momo_analytics.stg_momo_transactions
+[0m00:59:03.480650 [debug] [Thread-1 (]: Writing runtime sql for node "model.momo_analytics.stg_momo_transactions"
+[0m00:59:03.487653 [debug] [Thread-1 (]: Using postgres connection "model.momo_analytics.stg_momo_transactions"
+[0m00:59:03.488845 [debug] [Thread-1 (]: On model.momo_analytics.stg_momo_transactions: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "momo_analytics", "target_name": "dev", "node_id": "model.momo_analytics.stg_momo_transactions"} */
+
+  create view "momo_warehouse"."momo_dw_staging"."stg_momo_transactions__dbt_tmp"
+    
+    
+  as (
+    /*
+  Staging Model: stg_momo_transactions
+  =====================================
+  Cleans and standardises the raw MoMo transaction fact table.
+  Serves as the single source of truth for all downstream models.
+
+  Source: momo_dw.fact_transactions (loaded by ETL pipeline)
+  Author: Lawrence Koomson
+*/
+
+with source as (
+
+    select * from "momo_warehouse"."momo_dw"."fact_transactions"
+
+),
+
+staged as (
+
+    select
+        -- Primary key
+        transaction_id,
+
+        -- Timestamps
+        timestamp                                   as transaction_timestamp,
+        txn_date                                    as transaction_date,
+        txn_hour                                    as transaction_hour,
+        txn_day_of_week                             as day_of_week,
+        txn_month                                   as transaction_month,
+        txn_quarter                                 as transaction_quarter,
+        is_weekend,
+
+        -- Parties
+        upper(trim(sender_msisdn))                  as sender_msisdn,
+        upper(trim(receiver_msisdn))                as receiver_msisdn,
+
+        -- Financials
+        amount                                      as transaction_amount_ghs,
+        fee                                         as transaction_fee_ghs,
+        total_debit                                 as total_debit_ghs,
+        round(fee / nullif(amount, 0) * 100, 4)     as fee_rate_pct,
+
+        -- Categorisation
+        upper(transaction_type)                     as transaction_type_code,
+        transaction_type_label,
+        upper(currency)                             as currency,
+        amount_bucket,
+
+        -- Operator & geography
+        upper(operator)                             as operator,
+        upper(status)                               as transaction_status,
+        initcap(region)                             as region,
+
+        -- Flags
+        is_high_value,
+        is_rapid_succession,
+        coalesce(time_since_last_txn_sec, 0)        as secs_since_last_txn,
+
+        -- Audit
+        loaded_at
+
+    from source
+    where
+        transaction_id is not null
+        and transaction_amount_ghs > 0
+        and transaction_status in ('SUCCESS', 'FAILED', 'PENDING', 'REVERSED')
+
+)
+
+select * from staged
+  );
+[0m00:59:03.490846 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m00:59:04.486355 [debug] [Thread-1 (]: Postgres adapter: Postgres error: column "transaction_amount_ghs" does not exist
+LINE 70:         and transaction_amount_ghs > 0
+                     ^
+
+[0m00:59:04.487345 [debug] [Thread-1 (]: On model.momo_analytics.stg_momo_transactions: ROLLBACK
+[0m00:59:04.489347 [debug] [Thread-1 (]: On model.momo_analytics.stg_momo_transactions: Close
+[0m00:59:04.500954 [debug] [Thread-1 (]: Database Error in model stg_momo_transactions (models\staging\stg_momo_transactions.sql)
+  column "transaction_amount_ghs" does not exist
+  LINE 70:         and transaction_amount_ghs > 0
+                       ^
+  compiled code at target\run\momo_analytics\models\staging\stg_momo_transactions.sql
+[0m00:59:04.512918 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '37cd8e39-f14b-486b-a866-d63cf728ee48', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021C61E0D650>]}
+[0m00:59:04.513916 [error] [Thread-1 (]: 1 of 5 ERROR creating sql view model momo_dw_staging.stg_momo_transactions ..... [[31mERROR[0m in 1.13s]
+[0m00:59:04.515918 [debug] [Thread-1 (]: Finished running node model.momo_analytics.stg_momo_transactions
+[0m00:59:04.517916 [debug] [Thread-7 (]: Marking all children of 'model.momo_analytics.stg_momo_transactions' to be skipped because of status 'error'.  Reason: Database Error in model stg_momo_transactions (models\staging\stg_momo_transactions.sql)
+  column "transaction_amount_ghs" does not exist
+  LINE 70:         and transaction_amount_ghs > 0
+                       ^
+  compiled code at target\run\momo_analytics\models\staging\stg_momo_transactions.sql.
+[0m00:59:04.525917 [debug] [Thread-3 (]: Began running node model.momo_analytics.mart_daily_revenue
+[0m00:59:04.526920 [debug] [Thread-4 (]: Began running node model.momo_analytics.mart_high_value_transactions
+[0m00:59:04.527920 [debug] [Thread-2 (]: Began running node model.momo_analytics.mart_operator_performance
+[0m00:59:04.528954 [debug] [Thread-1 (]: Began running node model.momo_analytics.mart_region_summary
+[0m00:59:04.529923 [info ] [Thread-3 (]: 2 of 5 SKIP relation momo_dw_marts.mart_daily_revenue .......................... [[33mSKIP[0m]
+[0m00:59:04.530915 [info ] [Thread-4 (]: 3 of 5 SKIP relation momo_dw_marts.mart_high_value_transactions ................ [[33mSKIP[0m]
+[0m00:59:04.531923 [info ] [Thread-2 (]: 4 of 5 SKIP relation momo_dw_marts.mart_operator_performance ................... [[33mSKIP[0m]
+[0m00:59:04.532916 [info ] [Thread-1 (]: 5 of 5 SKIP relation momo_dw_marts.mart_region_summary ......................... [[33mSKIP[0m]
+[0m00:59:04.533915 [debug] [Thread-3 (]: Finished running node model.momo_analytics.mart_daily_revenue
+[0m00:59:04.534921 [debug] [Thread-4 (]: Finished running node model.momo_analytics.mart_high_value_transactions
+[0m00:59:04.535923 [debug] [Thread-2 (]: Finished running node model.momo_analytics.mart_operator_performance
+[0m00:59:04.536919 [debug] [Thread-1 (]: Finished running node model.momo_analytics.mart_region_summary
+[0m00:59:04.541916 [debug] [MainThread]: On master: COMMIT
+[0m00:59:04.542921 [debug] [MainThread]: Using postgres connection "master"
+[0m00:59:04.543924 [debug] [MainThread]: On master: COMMIT
+[0m00:59:04.544925 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m00:59:04.612445 [debug] [MainThread]: SQL status: COMMIT in 0.068 seconds
+[0m00:59:04.613450 [debug] [MainThread]: On master: Close
+[0m00:59:04.614447 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m00:59:04.615451 [debug] [MainThread]: Connection 'create_momo_warehouse_momo_dw_staging' was properly closed.
+[0m00:59:04.616453 [debug] [MainThread]: Connection 'create_momo_warehouse_momo_dw_marts' was properly closed.
+[0m00:59:04.616453 [debug] [MainThread]: Connection 'list_momo_warehouse_momo_dw_marts' was properly closed.
+[0m00:59:04.617457 [debug] [MainThread]: Connection 'list_momo_warehouse_momo_dw_staging' was properly closed.
+[0m00:59:04.619457 [debug] [MainThread]: Connection 'model.momo_analytics.stg_momo_transactions' was properly closed.
+[0m00:59:04.620452 [info ] [MainThread]: 
+[0m00:59:04.621454 [info ] [MainThread]: Finished running 4 table models, 1 view model in 0 hours 0 minutes and 2.44 seconds (2.44s).
+[0m00:59:04.624454 [debug] [MainThread]: Command end result
+[0m00:59:04.737985 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\DELL\Documents\Ghana-Momo-ETL-Pipeline\dbt\target\manifest.json
+[0m00:59:04.740987 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\DELL\Documents\Ghana-Momo-ETL-Pipeline\dbt\target\semantic_manifest.json
+[0m00:59:04.747992 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\DELL\Documents\Ghana-Momo-ETL-Pipeline\dbt\target\run_results.json
+[0m00:59:04.748993 [info ] [MainThread]: 
+[0m00:59:04.749692 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m00:59:04.750569 [info ] [MainThread]: 
+[0m00:59:04.751600 [error] [MainThread]: [31mFailure in model stg_momo_transactions (models\staging\stg_momo_transactions.sql)[0m
+[0m00:59:04.752580 [error] [MainThread]:   Database Error in model stg_momo_transactions (models\staging\stg_momo_transactions.sql)
+  column "transaction_amount_ghs" does not exist
+  LINE 70:         and transaction_amount_ghs > 0
+                       ^
+  compiled code at target\run\momo_analytics\models\staging\stg_momo_transactions.sql
+[0m00:59:04.753577 [info ] [MainThread]: 
+[0m00:59:04.753577 [info ] [MainThread]:   compiled code at target\compiled\momo_analytics\models\staging\stg_momo_transactions.sql
+[0m00:59:04.754579 [info ] [MainThread]: 
+[0m00:59:04.756578 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=4 NO-OP=0 TOTAL=5
+[0m00:59:04.759576 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 2 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m00:59:04.761577 [debug] [MainThread]: Command `dbt run` failed at 00:59:04.761577 after 10.62 seconds
+[0m00:59:04.762619 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021C5939B810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021C6232EF50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021C6232DD50>]}
+[0m00:59:04.763580 [debug] [MainThread]: Flushing usage events
+[0m00:59:06.663266 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m01:01:37.456759 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021D186AF8D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021D1762E950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021D1762EDD0>]}
+
+
+============================== 01:01:37.460795 | 08c63f72-d177-4d4b-9f35-2af36e3976a8 ==============================
+[0m01:01:37.460795 [info ] [MainThread]: Running with dbt=1.11.8
+[0m01:01:37.461762 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': '.', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt run --profiles-dir .', 'indirect_selection': 'eager', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\DELL\\Documents\\Ghana-Momo-ETL-Pipeline\\dbt\\logs'}
+[0m01:01:37.708195 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '08c63f72-d177-4d4b-9f35-2af36e3976a8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021D188C3E90>]}
+[0m01:01:37.781825 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '08c63f72-d177-4d4b-9f35-2af36e3976a8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021D13D556D0>]}
+[0m01:01:37.783790 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m01:01:38.250396 [debug] [MainThread]: checksum: 7d524ac048c2100769df89d592e662e060a73ca564e31bd9c2a37efdfe8d8ab6, vars: {}, profile: , target: , version: 1.11.8
+[0m01:01:38.422995 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m01:01:38.424007 [debug] [MainThread]: Partial parsing: updated file: momo_analytics://models\staging\stg_momo_transactions.sql
+[0m01:01:38.872201 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `accepted_values` defined on
+'stg_momo_transactions' in package 'momo_analytics'
+(models\staging\stg_momo_transactions.yml). Arguments to generic tests should be
+nested under the `arguments` property.
+[0m01:01:38.873173 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '08c63f72-d177-4d4b-9f35-2af36e3976a8', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021D18BA37D0>]}
+[0m01:01:38.995995 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '08c63f72-d177-4d4b-9f35-2af36e3976a8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021D18AF4D90>]}
+[0m01:01:39.102864 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\DELL\Documents\Ghana-Momo-ETL-Pipeline\dbt\target\manifest.json
+[0m01:01:39.106946 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\DELL\Documents\Ghana-Momo-ETL-Pipeline\dbt\target\semantic_manifest.json
+[0m01:01:39.120955 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '08c63f72-d177-4d4b-9f35-2af36e3976a8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021D188DB2D0>]}
+[0m01:01:39.120955 [info ] [MainThread]: Found 5 models, 5 data tests, 1 source, 465 macros
+[0m01:01:39.121955 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '08c63f72-d177-4d4b-9f35-2af36e3976a8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021D1886F6D0>]}
+[0m01:01:39.123954 [info ] [MainThread]: 
+[0m01:01:39.125259 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m01:01:39.126299 [info ] [MainThread]: 
+[0m01:01:39.127267 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m01:01:39.135273 [debug] [ThreadPool]: Acquiring new postgres connection 'list_momo_warehouse'
+[0m01:01:39.137268 [debug] [ThreadPool]: Acquiring new postgres connection 'list_momo_warehouse'
+[0m01:01:39.387116 [debug] [ThreadPool]: Using postgres connection "list_momo_warehouse"
+[0m01:01:39.388106 [debug] [ThreadPool]: Using postgres connection "list_momo_warehouse"
+[0m01:01:39.388106 [debug] [ThreadPool]: On list_momo_warehouse: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "momo_analytics", "target_name": "dev", "connection_name": "list_momo_warehouse"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m01:01:39.389106 [debug] [ThreadPool]: On list_momo_warehouse: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "momo_analytics", "target_name": "dev", "connection_name": "list_momo_warehouse"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m01:01:39.390105 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m01:01:39.391110 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m01:01:39.462119 [debug] [ThreadPool]: SQL status: SELECT 7 in 0.072 seconds
+[0m01:01:39.462119 [debug] [ThreadPool]: SQL status: SELECT 7 in 0.071 seconds
+[0m01:01:39.463119 [debug] [ThreadPool]: On list_momo_warehouse: Close
+[0m01:01:39.465395 [debug] [ThreadPool]: On list_momo_warehouse: Close
+[0m01:01:39.469396 [debug] [ThreadPool]: Acquiring new postgres connection 'list_momo_warehouse_momo_dw_marts'
+[0m01:01:39.471399 [debug] [ThreadPool]: Acquiring new postgres connection 'list_momo_warehouse_momo_dw_staging'
+[0m01:01:39.478431 [debug] [ThreadPool]: Using postgres connection "list_momo_warehouse_momo_dw_marts"
+[0m01:01:39.480430 [debug] [ThreadPool]: Using postgres connection "list_momo_warehouse_momo_dw_staging"
+[0m01:01:39.481430 [debug] [ThreadPool]: On list_momo_warehouse_momo_dw_marts: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "momo_analytics", "target_name": "dev", "connection_name": "list_momo_warehouse_momo_dw_marts"} */
+select
+      'momo_warehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'momo_dw_marts'
+    union all
+    select
+      'momo_warehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'momo_dw_marts'
+    union all
+    select
+      'momo_warehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'momo_dw_marts'
+  
+[0m01:01:39.482393 [debug] [ThreadPool]: On list_momo_warehouse_momo_dw_staging: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "momo_analytics", "target_name": "dev", "connection_name": "list_momo_warehouse_momo_dw_staging"} */
+select
+      'momo_warehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'momo_dw_staging'
+    union all
+    select
+      'momo_warehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'momo_dw_staging'
+    union all
+    select
+      'momo_warehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'momo_dw_staging'
+  
+[0m01:01:39.483420 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m01:01:39.484403 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m01:01:39.546146 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.062 seconds
+[0m01:01:39.547118 [debug] [ThreadPool]: On list_momo_warehouse_momo_dw_marts: ROLLBACK
+[0m01:01:39.548114 [debug] [ThreadPool]: On list_momo_warehouse_momo_dw_marts: Close
+[0m01:01:39.551117 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.067 seconds
+[0m01:01:39.553111 [debug] [ThreadPool]: On list_momo_warehouse_momo_dw_staging: ROLLBACK
+[0m01:01:39.555113 [debug] [ThreadPool]: On list_momo_warehouse_momo_dw_staging: Close
+[0m01:01:39.561108 [debug] [MainThread]: Using postgres connection "master"
+[0m01:01:39.562109 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "momo_analytics", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m01:01:39.563108 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m01:01:39.622111 [debug] [MainThread]: SQL status: SELECT 0 in 0.059 seconds
+[0m01:01:39.623110 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '08c63f72-d177-4d4b-9f35-2af36e3976a8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021D1886F6D0>]}
+[0m01:01:39.624147 [debug] [MainThread]: On master: ROLLBACK
+[0m01:01:39.625159 [debug] [MainThread]: On master: COMMIT
+[0m01:01:39.626159 [debug] [MainThread]: Using postgres connection "master"
+[0m01:01:39.627192 [debug] [MainThread]: On master: COMMIT
+[0m01:01:39.628158 [debug] [MainThread]: SQL status: COMMIT in 0.001 seconds
+[0m01:01:39.628158 [debug] [MainThread]: On master: Close
+[0m01:01:39.636156 [debug] [Thread-1 (]: Began running node model.momo_analytics.stg_momo_transactions
+[0m01:01:39.636156 [info ] [Thread-1 (]: 1 of 5 START sql view model momo_dw_staging.stg_momo_transactions .............. [RUN]
+[0m01:01:39.638161 [debug] [Thread-1 (]: Acquiring new postgres connection 'model.momo_analytics.stg_momo_transactions'
+[0m01:01:39.638161 [debug] [Thread-1 (]: Began compiling node model.momo_analytics.stg_momo_transactions
+[0m01:01:39.646713 [debug] [Thread-1 (]: Writing injected SQL for node "model.momo_analytics.stg_momo_transactions"
+[0m01:01:39.648680 [debug] [Thread-1 (]: Began executing node model.momo_analytics.stg_momo_transactions
+[0m01:01:39.688711 [debug] [Thread-1 (]: Writing runtime sql for node "model.momo_analytics.stg_momo_transactions"
+[0m01:01:39.691126 [debug] [Thread-1 (]: Using postgres connection "model.momo_analytics.stg_momo_transactions"
+[0m01:01:39.692135 [debug] [Thread-1 (]: On model.momo_analytics.stg_momo_transactions: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "momo_analytics", "target_name": "dev", "node_id": "model.momo_analytics.stg_momo_transactions"} */
+
+  create view "momo_warehouse"."momo_dw_staging"."stg_momo_transactions__dbt_tmp"
+    
+    
+  as (
+    /*
+  Staging Model: stg_momo_transactions
+  =====================================
+  Cleans and standardises the raw MoMo transaction fact table.
+  Serves as the single source of truth for all downstream models.
+
+  Source: momo_dw.fact_transactions (loaded by ETL pipeline)
+  Author: Lawrence Koomson
+*/
+
+with source as (
+
+    select * from "momo_warehouse"."momo_dw"."fact_transactions"
+
+),
+
+staged as (
+
+    select
+        -- Primary key
+        transaction_id,
+
+        -- Timestamps
+        timestamp                                   as transaction_timestamp,
+        txn_date                                    as transaction_date,
+        txn_hour                                    as transaction_hour,
+        txn_day_of_week                             as day_of_week,
+        txn_month                                   as transaction_month,
+        txn_quarter                                 as transaction_quarter,
+        is_weekend,
+
+        -- Parties
+        upper(trim(sender_msisdn))                  as sender_msisdn,
+        upper(trim(receiver_msisdn))                as receiver_msisdn,
+
+        -- Financials
+        amount                                      as transaction_amount_ghs,
+        fee                                         as transaction_fee_ghs,
+        total_debit                                 as total_debit_ghs,
+        round(fee / nullif(amount, 0) * 100, 4)     as fee_rate_pct,
+
+        -- Categorisation
+        upper(transaction_type)                     as transaction_type_code,
+        transaction_type_label,
+        upper(currency)                             as currency,
+        amount_bucket,
+
+        -- Operator & geography
+        upper(operator)                             as operator,
+        upper(status)                               as transaction_status,
+        initcap(region)                             as region,
+
+        -- Flags
+        is_high_value,
+        is_rapid_succession,
+        coalesce(time_since_last_txn_sec, 0)        as secs_since_last_txn,
+
+        -- Audit
+        loaded_at
+
+    from source
+   where
+        transaction_id is not null
+        and amount > 0
+        and status in ('SUCCESS', 'FAILED', 'PENDING', 'REVERSED')
+)
+
+select * from staged
+  );
+[0m01:01:39.692135 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m01:01:39.787754 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.095 seconds
+[0m01:01:39.794760 [debug] [Thread-1 (]: Using postgres connection "model.momo_analytics.stg_momo_transactions"
+[0m01:01:39.794760 [debug] [Thread-1 (]: On model.momo_analytics.stg_momo_transactions: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "momo_analytics", "target_name": "dev", "node_id": "model.momo_analytics.stg_momo_transactions"} */
+alter table "momo_warehouse"."momo_dw_staging"."stg_momo_transactions__dbt_tmp" rename to "stg_momo_transactions"
+[0m01:01:39.799967 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.004 seconds
+[0m01:01:39.817085 [debug] [Thread-1 (]: On model.momo_analytics.stg_momo_transactions: COMMIT
+[0m01:01:39.817085 [debug] [Thread-1 (]: Using postgres connection "model.momo_analytics.stg_momo_transactions"
+[0m01:01:39.818119 [debug] [Thread-1 (]: On model.momo_analytics.stg_momo_transactions: COMMIT
+[0m01:01:39.822438 [debug] [Thread-1 (]: SQL status: COMMIT in 0.003 seconds
+[0m01:01:39.830527 [debug] [Thread-1 (]: Applying DROP to: "momo_warehouse"."momo_dw_staging"."stg_momo_transactions__dbt_backup"
+[0m01:01:39.835486 [debug] [Thread-1 (]: Using postgres connection "model.momo_analytics.stg_momo_transactions"
+[0m01:01:39.836486 [debug] [Thread-1 (]: On model.momo_analytics.stg_momo_transactions: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "momo_analytics", "target_name": "dev", "node_id": "model.momo_analytics.stg_momo_transactions"} */
+drop view if exists "momo_warehouse"."momo_dw_staging"."stg_momo_transactions__dbt_backup" cascade
+[0m01:01:39.839991 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.003 seconds
+[0m01:01:39.843037 [debug] [Thread-1 (]: On model.momo_analytics.stg_momo_transactions: Close
+[0m01:01:39.845035 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '08c63f72-d177-4d4b-9f35-2af36e3976a8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021D18EC3D90>]}
+[0m01:01:39.846034 [info ] [Thread-1 (]: 1 of 5 OK created sql view model momo_dw_staging.stg_momo_transactions ......... [[32mCREATE VIEW[0m in 0.21s]
+[0m01:01:39.848000 [debug] [Thread-1 (]: Finished running node model.momo_analytics.stg_momo_transactions
+[0m01:01:39.850003 [debug] [Thread-3 (]: Began running node model.momo_analytics.mart_daily_revenue
+[0m01:01:39.850003 [debug] [Thread-4 (]: Began running node model.momo_analytics.mart_high_value_transactions
+[0m01:01:39.851036 [debug] [Thread-2 (]: Began running node model.momo_analytics.mart_operator_performance
+[0m01:01:39.851999 [debug] [Thread-1 (]: Began running node model.momo_analytics.mart_region_summary
+[0m01:01:39.851999 [info ] [Thread-3 (]: 2 of 5 START sql table model momo_dw_marts.mart_daily_revenue .................. [RUN]
+[0m01:01:39.854002 [info ] [Thread-4 (]: 3 of 5 START sql table model momo_dw_marts.mart_high_value_transactions ........ [RUN]
+[0m01:01:39.855002 [info ] [Thread-2 (]: 4 of 5 START sql table model momo_dw_marts.mart_operator_performance ........... [RUN]
+[0m01:01:39.855999 [info ] [Thread-1 (]: 5 of 5 START sql table model momo_dw_marts.mart_region_summary ................. [RUN]
+[0m01:01:39.857000 [debug] [Thread-3 (]: Acquiring new postgres connection 'model.momo_analytics.mart_daily_revenue'
+[0m01:01:39.857998 [debug] [Thread-4 (]: Acquiring new postgres connection 'model.momo_analytics.mart_high_value_transactions'
+[0m01:01:39.859036 [debug] [Thread-2 (]: Acquiring new postgres connection 'model.momo_analytics.mart_operator_performance'
+[0m01:01:39.860002 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.momo_analytics.stg_momo_transactions, now model.momo_analytics.mart_region_summary)
+[0m01:01:39.860002 [debug] [Thread-3 (]: Began compiling node model.momo_analytics.mart_daily_revenue
+[0m01:01:39.861007 [debug] [Thread-4 (]: Began compiling node model.momo_analytics.mart_high_value_transactions
+[0m01:01:39.862038 [debug] [Thread-2 (]: Began compiling node model.momo_analytics.mart_operator_performance
+[0m01:01:39.863004 [debug] [Thread-1 (]: Began compiling node model.momo_analytics.mart_region_summary
+[0m01:01:39.866998 [debug] [Thread-3 (]: Writing injected SQL for node "model.momo_analytics.mart_daily_revenue"
+[0m01:01:39.872033 [debug] [Thread-4 (]: Writing injected SQL for node "model.momo_analytics.mart_high_value_transactions"
+[0m01:01:39.875998 [debug] [Thread-2 (]: Writing injected SQL for node "model.momo_analytics.mart_operator_performance"
+[0m01:01:39.878997 [debug] [Thread-1 (]: Writing injected SQL for node "model.momo_analytics.mart_region_summary"
+[0m01:01:39.884014 [debug] [Thread-3 (]: Began executing node model.momo_analytics.mart_daily_revenue
+[0m01:01:39.885015 [debug] [Thread-4 (]: Began executing node model.momo_analytics.mart_high_value_transactions
+[0m01:01:39.886017 [debug] [Thread-2 (]: Began executing node model.momo_analytics.mart_operator_performance
+[0m01:01:39.912047 [debug] [Thread-3 (]: Writing runtime sql for node "model.momo_analytics.mart_daily_revenue"
+[0m01:01:39.913050 [debug] [Thread-1 (]: Began executing node model.momo_analytics.mart_region_summary
+[0m01:01:39.917011 [debug] [Thread-4 (]: Writing runtime sql for node "model.momo_analytics.mart_high_value_transactions"
+[0m01:01:39.924011 [debug] [Thread-2 (]: Writing runtime sql for node "model.momo_analytics.mart_operator_performance"
+[0m01:01:39.929056 [debug] [Thread-1 (]: Writing runtime sql for node "model.momo_analytics.mart_region_summary"
+[0m01:01:39.930021 [debug] [Thread-3 (]: Using postgres connection "model.momo_analytics.mart_daily_revenue"
+[0m01:01:39.931020 [debug] [Thread-4 (]: Using postgres connection "model.momo_analytics.mart_high_value_transactions"
+[0m01:01:39.932024 [debug] [Thread-3 (]: On model.momo_analytics.mart_daily_revenue: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "momo_analytics", "target_name": "dev", "node_id": "model.momo_analytics.mart_daily_revenue"} */
+
+  
+    
+
+  create  table "momo_warehouse"."momo_dw_marts"."mart_daily_revenue__dbt_tmp"
+  
+  
+    as
+  
+  (
+    /*
+  Mart Model: mart_daily_revenue
+  ================================
+  Aggregates MoMo transaction revenue by day.
+  Powers the daily revenue trend in Power BI.
+
+  Grain: One row per transaction_date
+  Author: Lawrence Koomson
+*/
+
+with staged as (
+
+    select * from "momo_warehouse"."momo_dw_staging"."stg_momo_transactions"
+
+),
+
+daily_revenue as (
+
+    select
+        transaction_date,
+        extract(year  from transaction_date)    as year,
+        extract(month from transaction_date)    as month,
+        extract(quarter from transaction_date)  as quarter,
+        to_char(transaction_date, 'Month')      as month_name,
+        to_char(transaction_date, 'Day')        as day_name,
+        is_weekend,
+
+        -- Volume
+        count(transaction_id)                           as total_transactions,
+        count(case when transaction_status = 'SUCCESS'
+                   then 1 end)                          as successful_transactions,
+        count(case when transaction_status = 'FAILED'
+                   then 1 end)                          as failed_transactions,
+        count(case when transaction_status = 'REVERSED'
+                   then 1 end)                          as reversed_transactions,
+
+        -- Revenue
+        round(sum(transaction_amount_ghs), 2)           as gross_revenue_ghs,
+        round(sum(case when transaction_status = 'SUCCESS'
+                       then transaction_amount_ghs
+                       else 0 end), 2)                  as net_revenue_ghs,
+        round(sum(transaction_fee_ghs), 2)              as total_fees_ghs,
+        round(avg(transaction_amount_ghs), 2)           as avg_transaction_ghs,
+
+        -- High value
+        count(case when is_high_value then 1 end)       as high_value_count,
+        round(sum(case when is_high_value
+                       then transaction_amount_ghs
+                       else 0 end), 2)                  as high_value_revenue_ghs,
+
+        -- Success rate
+        round(
+            count(case when transaction_status = 'SUCCESS' then 1 end)::numeric
+            / nullif(count(transaction_id), 0) * 100
+        , 2)                                            as success_rate_pct
+
+    from staged
+    group by
+        transaction_date,
+        extract(year  from transaction_date),
+        extract(month from transaction_date),
+        extract(quarter from transaction_date),
+        to_char(transaction_date, 'Month'),
+        to_char(transaction_date, 'Day'),
+        is_weekend
+
+)
+
+select * from daily_revenue
+order by transaction_date
+  );
+  
+[0m01:01:39.933057 [debug] [Thread-4 (]: On model.momo_analytics.mart_high_value_transactions: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "momo_analytics", "target_name": "dev", "node_id": "model.momo_analytics.mart_high_value_transactions"} */
+
+  
+    
+
+  create  table "momo_warehouse"."momo_dw_marts"."mart_high_value_transactions__dbt_tmp"
+  
+  
+    as
+  
+  (
+    /*
+  Mart Model: mart_high_value_transactions
+  ==========================================
+  Surfaces all high-value and anomalous transactions
+  for compliance monitoring and fraud review in Power BI.
+
+  Grain: One row per flagged transaction
+  Author: Lawrence Koomson
+*/
+
+with staged as (
+
+    select * from "momo_warehouse"."momo_dw_staging"."stg_momo_transactions"
+
+),
+
+flagged as (
+
+    select
+        transaction_id,
+        transaction_date,
+        transaction_hour,
+        day_of_week,
+        is_weekend,
+
+        sender_msisdn,
+        receiver_msisdn,
+        operator,
+        region,
+
+        transaction_amount_ghs,
+        transaction_fee_ghs,
+        total_debit_ghs,
+        transaction_type_label,
+        transaction_status,
+        amount_bucket,
+        currency,
+
+        is_high_value,
+        is_rapid_succession,
+        secs_since_last_txn,
+
+        -- Risk classification
+        case
+            when is_high_value and is_rapid_succession then 'CRITICAL'
+            when is_high_value                         then 'HIGH'
+            when is_rapid_succession                   then 'MEDIUM'
+            else 'LOW'
+        end                                             as risk_level,
+
+        -- Alert reason
+        case
+            when is_high_value and is_rapid_succession
+                then 'High-value rapid succession — immediate review required'
+            when is_high_value
+                then 'High-value transaction — above 95th percentile'
+            when is_rapid_succession
+                then 'Rapid succession — multiple txns within 2 minutes'
+            else 'Monitoring'
+        end                                             as alert_reason,
+
+        loaded_at
+
+    from staged
+    where
+        is_high_value = true
+        or is_rapid_succession = true
+
+)
+
+select * from flagged
+order by
+    case risk_level
+        when 'CRITICAL' then 1
+        when 'HIGH'     then 2
+        when 'MEDIUM'   then 3
+        else 4
+    end,
+    transaction_amount_ghs desc
+  );
+  
+[0m01:01:39.934028 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m01:01:39.934028 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m01:01:39.949451 [debug] [Thread-2 (]: Using postgres connection "model.momo_analytics.mart_operator_performance"
+[0m01:01:39.951458 [debug] [Thread-2 (]: On model.momo_analytics.mart_operator_performance: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "momo_analytics", "target_name": "dev", "node_id": "model.momo_analytics.mart_operator_performance"} */
+
+  
+    
+
+  create  table "momo_warehouse"."momo_dw_marts"."mart_operator_performance__dbt_tmp"
+  
+  
+    as
+  
+  (
+    /*
+  Mart Model: mart_operator_performance
+  =======================================
+  Aggregates transaction metrics per mobile network operator.
+  Powers the operator comparison view in Power BI.
+
+  Grain: One row per operator
+  Author: Lawrence Koomson
+*/
+
+with staged as (
+
+    select * from "momo_warehouse"."momo_dw_staging"."stg_momo_transactions"
+
+),
+
+operator_stats as (
+
+    select
+        operator,
+
+        -- Volume
+        count(transaction_id)                           as total_transactions,
+        count(distinct sender_msisdn)                   as unique_senders,
+        count(distinct receiver_msisdn)                 as unique_receivers,
+
+        -- Revenue
+        round(sum(transaction_amount_ghs), 2)           as total_volume_ghs,
+        round(avg(transaction_amount_ghs), 2)           as avg_transaction_ghs,
+        round(min(transaction_amount_ghs), 2)           as min_transaction_ghs,
+        round(max(transaction_amount_ghs), 2)           as max_transaction_ghs,
+        round(sum(transaction_fee_ghs), 2)              as total_fees_collected_ghs,
+
+        -- Transaction types
+        count(case when transaction_type_code = 'P2P'
+                   then 1 end)                          as p2p_count,
+        count(case when transaction_type_code = 'MBP'
+                   then 1 end)                          as merchant_payment_count,
+        count(case when transaction_type_code = 'WDR'
+                   then 1 end)                          as withdrawal_count,
+        count(case when transaction_type_code = 'DEP'
+                   then 1 end)                          as deposit_count,
+
+        -- Performance
+        round(
+            count(case when transaction_status = 'SUCCESS' then 1 end)::numeric
+            / nullif(count(transaction_id), 0) * 100
+        , 2)                                            as success_rate_pct,
+
+        round(
+            count(case when transaction_status = 'FAILED' then 1 end)::numeric
+            / nullif(count(transaction_id), 0) * 100
+        , 2)                                            as failure_rate_pct,
+
+        -- Anomalies
+        count(case when is_high_value
+                   then 1 end)                          as high_value_transactions,
+        count(case when is_rapid_succession
+                   then 1 end)                          as rapid_succession_flags,
+
+        -- Market share
+        round(
+            count(transaction_id)::numeric
+            / sum(count(transaction_id)) over () * 100
+        , 2)                                            as market_share_by_volume_pct,
+
+        round(
+            sum(transaction_amount_ghs)
+            / sum(sum(transaction_amount_ghs)) over () * 100
+        , 2)                                            as market_share_by_value_pct
+
+    from staged
+    group by operator
+
+)
+
+select * from operator_stats
+order by total_volume_ghs desc
+  );
+  
+[0m01:01:39.953567 [debug] [Thread-1 (]: Using postgres connection "model.momo_analytics.mart_region_summary"
+[0m01:01:39.954571 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m01:01:39.955575 [debug] [Thread-1 (]: On model.momo_analytics.mart_region_summary: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "momo_analytics", "target_name": "dev", "node_id": "model.momo_analytics.mart_region_summary"} */
+
+  
+    
+
+  create  table "momo_warehouse"."momo_dw_marts"."mart_region_summary__dbt_tmp"
+  
+  
+    as
+  
+  (
+    /*
+  Mart Model: mart_region_summary
+  =================================
+  Aggregates MoMo transaction data by Ghana region.
+  Powers the regional heatmap in Power BI.
+
+  Grain: One row per region
+  Author: Lawrence Koomson
+*/
+
+with staged as (
+
+    select * from "momo_warehouse"."momo_dw_staging"."stg_momo_transactions"
+
+),
+
+region_stats as (
+
+    select
+        region,
+
+        -- Volume
+        count(transaction_id)                           as total_transactions,
+        count(distinct sender_msisdn)                   as unique_customers,
+
+        -- Revenue
+        round(sum(transaction_amount_ghs), 2)           as total_volume_ghs,
+        round(avg(transaction_amount_ghs), 2)           as avg_transaction_ghs,
+        round(sum(transaction_fee_ghs), 2)              as total_fees_ghs,
+
+        -- Success metrics
+        round(
+            count(case when transaction_status = 'SUCCESS' then 1 end)::numeric
+            / nullif(count(transaction_id), 0) * 100
+        , 2)                                            as success_rate_pct,
+
+        -- Peak hours
+        mode() within group (order by transaction_hour) as peak_hour,
+
+        -- Weekend activity
+        count(case when is_weekend then 1 end)          as weekend_transactions,
+        round(
+            count(case when is_weekend then 1 end)::numeric
+            / nullif(count(transaction_id), 0) * 100
+        , 2)                                            as weekend_pct,
+
+        -- High value
+        count(case when is_high_value then 1 end)       as high_value_count,
+        round(sum(case when is_high_value
+                       then transaction_amount_ghs
+                       else 0 end), 2)                  as high_value_volume_ghs,
+
+        -- Market share
+        round(
+            sum(transaction_amount_ghs)
+            / sum(sum(transaction_amount_ghs)) over () * 100
+        , 2)                                            as revenue_share_pct
+
+    from staged
+    group by region
+
+)
+
+select * from region_stats
+order by total_volume_ghs desc
+  );
+  
+[0m01:01:39.957569 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m01:01:40.042358 [debug] [Thread-4 (]: SQL status: SELECT 485 in 0.108 seconds
+[0m01:01:40.050323 [debug] [Thread-4 (]: Using postgres connection "model.momo_analytics.mart_high_value_transactions"
+[0m01:01:40.051431 [debug] [Thread-4 (]: On model.momo_analytics.mart_high_value_transactions: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "momo_analytics", "target_name": "dev", "node_id": "model.momo_analytics.mart_high_value_transactions"} */
+alter table "momo_warehouse"."momo_dw_marts"."mart_high_value_transactions__dbt_tmp" rename to "mart_high_value_transactions"
+[0m01:01:40.052422 [debug] [Thread-4 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m01:01:40.054428 [debug] [Thread-4 (]: On model.momo_analytics.mart_high_value_transactions: COMMIT
+[0m01:01:40.055432 [debug] [Thread-4 (]: Using postgres connection "model.momo_analytics.mart_high_value_transactions"
+[0m01:01:40.056426 [debug] [Thread-4 (]: On model.momo_analytics.mart_high_value_transactions: COMMIT
+[0m01:01:40.066423 [debug] [Thread-4 (]: SQL status: COMMIT in 0.009 seconds
+[0m01:01:40.072457 [debug] [Thread-4 (]: Applying DROP to: "momo_warehouse"."momo_dw_marts"."mart_high_value_transactions__dbt_backup"
+[0m01:01:40.073458 [debug] [Thread-3 (]: SQL status: SELECT 7 in 0.140 seconds
+[0m01:01:40.078425 [debug] [Thread-4 (]: Using postgres connection "model.momo_analytics.mart_high_value_transactions"
+[0m01:01:40.085597 [debug] [Thread-3 (]: Using postgres connection "model.momo_analytics.mart_daily_revenue"
+[0m01:01:40.086601 [debug] [Thread-4 (]: On model.momo_analytics.mart_high_value_transactions: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "momo_analytics", "target_name": "dev", "node_id": "model.momo_analytics.mart_high_value_transactions"} */
+drop table if exists "momo_warehouse"."momo_dw_marts"."mart_high_value_transactions__dbt_backup" cascade
+[0m01:01:40.087564 [debug] [Thread-3 (]: On model.momo_analytics.mart_daily_revenue: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "momo_analytics", "target_name": "dev", "node_id": "model.momo_analytics.mart_daily_revenue"} */
+alter table "momo_warehouse"."momo_dw_marts"."mart_daily_revenue__dbt_tmp" rename to "mart_daily_revenue"
+[0m01:01:40.089562 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m01:01:40.090599 [debug] [Thread-4 (]: SQL status: DROP TABLE in 0.002 seconds
+[0m01:01:40.092568 [debug] [Thread-3 (]: On model.momo_analytics.mart_daily_revenue: COMMIT
+[0m01:01:40.095568 [debug] [Thread-4 (]: On model.momo_analytics.mart_high_value_transactions: Close
+[0m01:01:40.096567 [debug] [Thread-3 (]: Using postgres connection "model.momo_analytics.mart_daily_revenue"
+[0m01:01:40.098565 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '08c63f72-d177-4d4b-9f35-2af36e3976a8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021D18E0BA50>]}
+[0m01:01:40.099565 [debug] [Thread-3 (]: On model.momo_analytics.mart_daily_revenue: COMMIT
+[0m01:01:40.102312 [info ] [Thread-4 (]: 3 of 5 OK created sql table model momo_dw_marts.mart_high_value_transactions ... [[32mSELECT 485[0m in 0.24s]
+[0m01:01:40.106315 [debug] [Thread-4 (]: Finished running node model.momo_analytics.mart_high_value_transactions
+[0m01:01:40.108314 [debug] [Thread-3 (]: SQL status: COMMIT in 0.004 seconds
+[0m01:01:40.111309 [debug] [Thread-3 (]: Applying DROP to: "momo_warehouse"."momo_dw_marts"."mart_daily_revenue__dbt_backup"
+[0m01:01:40.112311 [debug] [Thread-3 (]: Using postgres connection "model.momo_analytics.mart_daily_revenue"
+[0m01:01:40.113311 [debug] [Thread-3 (]: On model.momo_analytics.mart_daily_revenue: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "momo_analytics", "target_name": "dev", "node_id": "model.momo_analytics.mart_daily_revenue"} */
+drop table if exists "momo_warehouse"."momo_dw_marts"."mart_daily_revenue__dbt_backup" cascade
+[0m01:01:40.114311 [debug] [Thread-3 (]: SQL status: DROP TABLE in 0.001 seconds
+[0m01:01:40.115312 [debug] [Thread-3 (]: On model.momo_analytics.mart_daily_revenue: Close
+[0m01:01:40.117314 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '08c63f72-d177-4d4b-9f35-2af36e3976a8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021D19336B50>]}
+[0m01:01:40.119312 [info ] [Thread-3 (]: 2 of 5 OK created sql table model momo_dw_marts.mart_daily_revenue ............. [[32mSELECT 7[0m in 0.26s]
+[0m01:01:40.121320 [debug] [Thread-3 (]: Finished running node model.momo_analytics.mart_daily_revenue
+[0m01:01:40.122313 [debug] [Thread-1 (]: SQL status: SELECT 6 in 0.165 seconds
+[0m01:01:40.128333 [debug] [Thread-1 (]: Using postgres connection "model.momo_analytics.mart_region_summary"
+[0m01:01:40.129336 [debug] [Thread-1 (]: On model.momo_analytics.mart_region_summary: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "momo_analytics", "target_name": "dev", "node_id": "model.momo_analytics.mart_region_summary"} */
+alter table "momo_warehouse"."momo_dw_marts"."mart_region_summary__dbt_tmp" rename to "mart_region_summary"
+[0m01:01:40.131335 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m01:01:40.133333 [debug] [Thread-1 (]: On model.momo_analytics.mart_region_summary: COMMIT
+[0m01:01:40.134337 [debug] [Thread-1 (]: Using postgres connection "model.momo_analytics.mart_region_summary"
+[0m01:01:40.135334 [debug] [Thread-1 (]: On model.momo_analytics.mart_region_summary: COMMIT
+[0m01:01:40.138334 [debug] [Thread-1 (]: SQL status: COMMIT in 0.001 seconds
+[0m01:01:40.141424 [debug] [Thread-1 (]: Applying DROP to: "momo_warehouse"."momo_dw_marts"."mart_region_summary__dbt_backup"
+[0m01:01:40.142421 [debug] [Thread-1 (]: Using postgres connection "model.momo_analytics.mart_region_summary"
+[0m01:01:40.143424 [debug] [Thread-1 (]: On model.momo_analytics.mart_region_summary: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "momo_analytics", "target_name": "dev", "node_id": "model.momo_analytics.mart_region_summary"} */
+drop table if exists "momo_warehouse"."momo_dw_marts"."mart_region_summary__dbt_backup" cascade
+[0m01:01:40.144424 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.001 seconds
+[0m01:01:40.146426 [debug] [Thread-1 (]: On model.momo_analytics.mart_region_summary: Close
+[0m01:01:40.147423 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '08c63f72-d177-4d4b-9f35-2af36e3976a8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021D192A3950>]}
+[0m01:01:40.148425 [info ] [Thread-1 (]: 5 of 5 OK created sql table model momo_dw_marts.mart_region_summary ............ [[32mSELECT 6[0m in 0.29s]
+[0m01:01:40.149424 [debug] [Thread-1 (]: Finished running node model.momo_analytics.mart_region_summary
+[0m01:01:40.166421 [debug] [Thread-2 (]: SQL status: SELECT 3 in 0.212 seconds
+[0m01:01:40.171427 [debug] [Thread-2 (]: Using postgres connection "model.momo_analytics.mart_operator_performance"
+[0m01:01:40.172424 [debug] [Thread-2 (]: On model.momo_analytics.mart_operator_performance: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "momo_analytics", "target_name": "dev", "node_id": "model.momo_analytics.mart_operator_performance"} */
+alter table "momo_warehouse"."momo_dw_marts"."mart_operator_performance__dbt_tmp" rename to "mart_operator_performance"
+[0m01:01:40.173422 [debug] [Thread-2 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m01:01:40.175423 [debug] [Thread-2 (]: On model.momo_analytics.mart_operator_performance: COMMIT
+[0m01:01:40.176423 [debug] [Thread-2 (]: Using postgres connection "model.momo_analytics.mart_operator_performance"
+[0m01:01:40.176423 [debug] [Thread-2 (]: On model.momo_analytics.mart_operator_performance: COMMIT
+[0m01:01:40.177422 [debug] [Thread-2 (]: SQL status: COMMIT in 0.001 seconds
+[0m01:01:40.181422 [debug] [Thread-2 (]: Applying DROP to: "momo_warehouse"."momo_dw_marts"."mart_operator_performance__dbt_backup"
+[0m01:01:40.182423 [debug] [Thread-2 (]: Using postgres connection "model.momo_analytics.mart_operator_performance"
+[0m01:01:40.182423 [debug] [Thread-2 (]: On model.momo_analytics.mart_operator_performance: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "momo_analytics", "target_name": "dev", "node_id": "model.momo_analytics.mart_operator_performance"} */
+drop table if exists "momo_warehouse"."momo_dw_marts"."mart_operator_performance__dbt_backup" cascade
+[0m01:01:40.184425 [debug] [Thread-2 (]: SQL status: DROP TABLE in 0.001 seconds
+[0m01:01:40.186424 [debug] [Thread-2 (]: On model.momo_analytics.mart_operator_performance: Close
+[0m01:01:40.187428 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '08c63f72-d177-4d4b-9f35-2af36e3976a8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021D193F5410>]}
+[0m01:01:40.188427 [info ] [Thread-2 (]: 4 of 5 OK created sql table model momo_dw_marts.mart_operator_performance ...... [[32mSELECT 3[0m in 0.33s]
+[0m01:01:40.189427 [debug] [Thread-2 (]: Finished running node model.momo_analytics.mart_operator_performance
+[0m01:01:40.192423 [debug] [MainThread]: On master: COMMIT
+[0m01:01:40.192423 [debug] [MainThread]: Using postgres connection "master"
+[0m01:01:40.193424 [debug] [MainThread]: On master: COMMIT
+[0m01:01:40.194424 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m01:01:40.249029 [debug] [MainThread]: SQL status: COMMIT in 0.055 seconds
+[0m01:01:40.249029 [debug] [MainThread]: On master: Close
+[0m01:01:40.251070 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m01:01:40.251070 [debug] [MainThread]: Connection 'list_momo_warehouse' was properly closed.
+[0m01:01:40.252042 [debug] [MainThread]: Connection 'list_momo_warehouse' was properly closed.
+[0m01:01:40.253028 [debug] [MainThread]: Connection 'list_momo_warehouse_momo_dw_marts' was properly closed.
+[0m01:01:40.253028 [debug] [MainThread]: Connection 'list_momo_warehouse_momo_dw_staging' was properly closed.
+[0m01:01:40.254030 [debug] [MainThread]: Connection 'model.momo_analytics.mart_region_summary' was properly closed.
+[0m01:01:40.255039 [debug] [MainThread]: Connection 'model.momo_analytics.mart_daily_revenue' was properly closed.
+[0m01:01:40.256065 [debug] [MainThread]: Connection 'model.momo_analytics.mart_high_value_transactions' was properly closed.
+[0m01:01:40.256065 [debug] [MainThread]: Connection 'model.momo_analytics.mart_operator_performance' was properly closed.
+[0m01:01:40.257066 [info ] [MainThread]: 
+[0m01:01:40.258030 [info ] [MainThread]: Finished running 4 table models, 1 view model in 0 hours 0 minutes and 1.13 seconds (1.13s).
+[0m01:01:40.260065 [debug] [MainThread]: Command end result
+[0m01:01:40.305030 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\DELL\Documents\Ghana-Momo-ETL-Pipeline\dbt\target\manifest.json
+[0m01:01:40.308027 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\DELL\Documents\Ghana-Momo-ETL-Pipeline\dbt\target\semantic_manifest.json
+[0m01:01:40.315065 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\DELL\Documents\Ghana-Momo-ETL-Pipeline\dbt\target\run_results.json
+[0m01:01:40.316029 [info ] [MainThread]: 
+[0m01:01:40.318033 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m01:01:40.319033 [info ] [MainThread]: 
+[0m01:01:40.321028 [info ] [MainThread]: Done. PASS=5 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=5
+[0m01:01:40.322032 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 2 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m01:01:40.324028 [debug] [MainThread]: Command `dbt run` succeeded at 01:01:40.324028 after 2.99 seconds
+[0m01:01:40.325065 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021D1867D710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021D107D3390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021D173B8E10>]}
+[0m01:01:40.326103 [debug] [MainThread]: Flushing usage events
+[0m01:01:42.929841 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m01:02:35.629648 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A4BA89DAD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A4BA89F790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A4BA89EC90>]}
+
+
+============================== 01:02:35.633649 | 26944873-448f-4da8-b168-e222993009a6 ==============================
+[0m01:02:35.633649 [info ] [MainThread]: Running with dbt=1.11.8
+[0m01:02:35.634674 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': '.', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt test --profiles-dir .', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\DELL\\Documents\\Ghana-Momo-ETL-Pipeline\\dbt\\logs'}
+[0m01:02:35.889706 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '26944873-448f-4da8-b168-e222993009a6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A4BB93B110>]}
+[0m01:02:35.962674 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '26944873-448f-4da8-b168-e222993009a6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A4B7059590>]}
+[0m01:02:35.964672 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m01:02:36.442582 [debug] [MainThread]: checksum: 7d524ac048c2100769df89d592e662e060a73ca564e31bd9c2a37efdfe8d8ab6, vars: {}, profile: , target: , version: 1.11.8
+[0m01:02:36.626373 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m01:02:36.627406 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m01:02:36.628374 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m01:02:36.684421 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '26944873-448f-4da8-b168-e222993009a6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A4BBEDF5D0>]}
+[0m01:02:36.849609 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\DELL\Documents\Ghana-Momo-ETL-Pipeline\dbt\target\manifest.json
+[0m01:02:36.853602 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\DELL\Documents\Ghana-Momo-ETL-Pipeline\dbt\target\semantic_manifest.json
+[0m01:02:36.981403 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '26944873-448f-4da8-b168-e222993009a6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A4BBB40B10>]}
+[0m01:02:36.982401 [info ] [MainThread]: Found 5 models, 5 data tests, 1 source, 465 macros
+[0m01:02:36.983398 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '26944873-448f-4da8-b168-e222993009a6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A4BBB67350>]}
+[0m01:02:36.987433 [info ] [MainThread]: 
+[0m01:02:36.988397 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m01:02:36.989908 [info ] [MainThread]: 
+[0m01:02:36.991919 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m01:02:37.000919 [debug] [ThreadPool]: Acquiring new postgres connection 'list_momo_warehouse_momo_dw_staging'
+[0m01:02:37.002922 [debug] [ThreadPool]: Acquiring new postgres connection 'list_momo_warehouse_momo_dw_marts'
+[0m01:02:37.181230 [debug] [ThreadPool]: Using postgres connection "list_momo_warehouse_momo_dw_staging"
+[0m01:02:37.181230 [debug] [ThreadPool]: Using postgres connection "list_momo_warehouse_momo_dw_marts"
+[0m01:02:37.272395 [debug] [ThreadPool]: On list_momo_warehouse_momo_dw_staging: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "momo_analytics", "target_name": "dev", "connection_name": "list_momo_warehouse_momo_dw_staging"} */
+select
+      'momo_warehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'momo_dw_staging'
+    union all
+    select
+      'momo_warehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'momo_dw_staging'
+    union all
+    select
+      'momo_warehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'momo_dw_staging'
+  
+[0m01:02:37.273403 [debug] [ThreadPool]: On list_momo_warehouse_momo_dw_marts: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "momo_analytics", "target_name": "dev", "connection_name": "list_momo_warehouse_momo_dw_marts"} */
+select
+      'momo_warehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'momo_dw_marts'
+    union all
+    select
+      'momo_warehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'momo_dw_marts'
+    union all
+    select
+      'momo_warehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'momo_dw_marts'
+  
+[0m01:02:37.274403 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m01:02:37.274403 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m01:02:37.357694 [debug] [ThreadPool]: SQL status: SELECT 1 in 0.083 seconds
+[0m01:02:37.357694 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.083 seconds
+[0m01:02:37.359693 [debug] [ThreadPool]: On list_momo_warehouse_momo_dw_staging: ROLLBACK
+[0m01:02:37.360660 [debug] [ThreadPool]: On list_momo_warehouse_momo_dw_marts: ROLLBACK
+[0m01:02:37.361663 [debug] [ThreadPool]: On list_momo_warehouse_momo_dw_staging: Close
+[0m01:02:37.362661 [debug] [ThreadPool]: On list_momo_warehouse_momo_dw_marts: Close
+[0m01:02:37.375693 [debug] [MainThread]: Using postgres connection "master"
+[0m01:02:37.376738 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "momo_analytics", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m01:02:37.377744 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m01:02:37.443786 [debug] [MainThread]: SQL status: SELECT 1 in 0.065 seconds
+[0m01:02:37.444786 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '26944873-448f-4da8-b168-e222993009a6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A4B673F3D0>]}
+[0m01:02:37.445785 [debug] [MainThread]: On master: ROLLBACK
+[0m01:02:37.446786 [debug] [MainThread]: On master: COMMIT
+[0m01:02:37.447824 [debug] [MainThread]: Using postgres connection "master"
+[0m01:02:37.447824 [debug] [MainThread]: On master: COMMIT
+[0m01:02:37.449786 [debug] [MainThread]: SQL status: COMMIT in 0.001 seconds
+[0m01:02:37.450792 [debug] [MainThread]: On master: Close
+[0m01:02:37.458786 [debug] [Thread-1 (]: Began running node test.momo_analytics.accepted_values_stg_momo_transactions_operator__MTN__VODAFONE__AIRTELTIGO.bc2f48c11a
+[0m01:02:37.459784 [debug] [Thread-2 (]: Began running node test.momo_analytics.accepted_values_stg_momo_transactions_transaction_status__SUCCESS__FAILED__PENDING__REVERSED.f9015f2ebf
+[0m01:02:37.459784 [debug] [Thread-3 (]: Began running node test.momo_analytics.not_null_stg_momo_transactions_transaction_amount_ghs.19bb3dfa14
+[0m01:02:37.460787 [debug] [Thread-4 (]: Began running node test.momo_analytics.not_null_stg_momo_transactions_transaction_id.289b52c0c4
+[0m01:02:37.460787 [info ] [Thread-1 (]: 1 of 5 START test accepted_values_stg_momo_transactions_operator__MTN__VODAFONE__AIRTELTIGO  [RUN]
+[0m01:02:37.461795 [info ] [Thread-2 (]: 2 of 5 START test accepted_values_stg_momo_transactions_transaction_status__SUCCESS__FAILED__PENDING__REVERSED  [RUN]
+[0m01:02:37.462794 [info ] [Thread-3 (]: 3 of 5 START test not_null_stg_momo_transactions_transaction_amount_ghs ........ [RUN]
+[0m01:02:37.464794 [info ] [Thread-4 (]: 4 of 5 START test not_null_stg_momo_transactions_transaction_id ................ [RUN]
+[0m01:02:37.465787 [debug] [Thread-1 (]: Acquiring new postgres connection 'test.momo_analytics.accepted_values_stg_momo_transactions_operator__MTN__VODAFONE__AIRTELTIGO.bc2f48c11a'
+[0m01:02:37.466791 [debug] [Thread-2 (]: Acquiring new postgres connection 'test.momo_analytics.accepted_values_stg_momo_transactions_transaction_status__SUCCESS__FAILED__PENDING__REVERSED.f9015f2ebf'
+[0m01:02:37.467791 [debug] [Thread-3 (]: Acquiring new postgres connection 'test.momo_analytics.not_null_stg_momo_transactions_transaction_amount_ghs.19bb3dfa14'
+[0m01:02:37.468790 [debug] [Thread-4 (]: Acquiring new postgres connection 'test.momo_analytics.not_null_stg_momo_transactions_transaction_id.289b52c0c4'
+[0m01:02:37.469783 [debug] [Thread-1 (]: Began compiling node test.momo_analytics.accepted_values_stg_momo_transactions_operator__MTN__VODAFONE__AIRTELTIGO.bc2f48c11a
+[0m01:02:37.470790 [debug] [Thread-2 (]: Began compiling node test.momo_analytics.accepted_values_stg_momo_transactions_transaction_status__SUCCESS__FAILED__PENDING__REVERSED.f9015f2ebf
+[0m01:02:37.471792 [debug] [Thread-3 (]: Began compiling node test.momo_analytics.not_null_stg_momo_transactions_transaction_amount_ghs.19bb3dfa14
+[0m01:02:37.472793 [debug] [Thread-4 (]: Began compiling node test.momo_analytics.not_null_stg_momo_transactions_transaction_id.289b52c0c4
+[0m01:02:37.505328 [debug] [Thread-1 (]: Writing injected SQL for node "test.momo_analytics.accepted_values_stg_momo_transactions_operator__MTN__VODAFONE__AIRTELTIGO.bc2f48c11a"
+[0m01:02:37.515332 [debug] [Thread-2 (]: Writing injected SQL for node "test.momo_analytics.accepted_values_stg_momo_transactions_transaction_status__SUCCESS__FAILED__PENDING__REVERSED.f9015f2ebf"
+[0m01:02:37.526321 [debug] [Thread-3 (]: Writing injected SQL for node "test.momo_analytics.not_null_stg_momo_transactions_transaction_amount_ghs.19bb3dfa14"
+[0m01:02:37.532361 [debug] [Thread-4 (]: Writing injected SQL for node "test.momo_analytics.not_null_stg_momo_transactions_transaction_id.289b52c0c4"
+[0m01:02:37.534321 [debug] [Thread-1 (]: Began executing node test.momo_analytics.accepted_values_stg_momo_transactions_operator__MTN__VODAFONE__AIRTELTIGO.bc2f48c11a
+[0m01:02:37.562326 [debug] [Thread-1 (]: Writing runtime sql for node "test.momo_analytics.accepted_values_stg_momo_transactions_operator__MTN__VODAFONE__AIRTELTIGO.bc2f48c11a"
+[0m01:02:37.563323 [debug] [Thread-3 (]: Began executing node test.momo_analytics.not_null_stg_momo_transactions_transaction_amount_ghs.19bb3dfa14
+[0m01:02:37.564326 [debug] [Thread-2 (]: Began executing node test.momo_analytics.accepted_values_stg_momo_transactions_transaction_status__SUCCESS__FAILED__PENDING__REVERSED.f9015f2ebf
+[0m01:02:37.565322 [debug] [Thread-4 (]: Began executing node test.momo_analytics.not_null_stg_momo_transactions_transaction_id.289b52c0c4
+[0m01:02:37.568324 [debug] [Thread-3 (]: Writing runtime sql for node "test.momo_analytics.not_null_stg_momo_transactions_transaction_amount_ghs.19bb3dfa14"
+[0m01:02:37.572331 [debug] [Thread-2 (]: Writing runtime sql for node "test.momo_analytics.accepted_values_stg_momo_transactions_transaction_status__SUCCESS__FAILED__PENDING__REVERSED.f9015f2ebf"
+[0m01:02:37.573326 [debug] [Thread-1 (]: Using postgres connection "test.momo_analytics.accepted_values_stg_momo_transactions_operator__MTN__VODAFONE__AIRTELTIGO.bc2f48c11a"
+[0m01:02:37.576340 [debug] [Thread-4 (]: Writing runtime sql for node "test.momo_analytics.not_null_stg_momo_transactions_transaction_id.289b52c0c4"
+[0m01:02:37.578337 [debug] [Thread-1 (]: On test.momo_analytics.accepted_values_stg_momo_transactions_operator__MTN__VODAFONE__AIRTELTIGO.bc2f48c11a: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "momo_analytics", "target_name": "dev", "node_id": "test.momo_analytics.accepted_values_stg_momo_transactions_operator__MTN__VODAFONE__AIRTELTIGO.bc2f48c11a"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with all_values as (
+
+    select
+        operator as value_field,
+        count(*) as n_records
+
+    from "momo_warehouse"."momo_dw_staging"."stg_momo_transactions"
+    group by operator
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'MTN','VODAFONE','AIRTELTIGO'
+)
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m01:02:37.579336 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m01:02:37.605859 [debug] [Thread-3 (]: Using postgres connection "test.momo_analytics.not_null_stg_momo_transactions_transaction_amount_ghs.19bb3dfa14"
+[0m01:02:37.606859 [debug] [Thread-3 (]: On test.momo_analytics.not_null_stg_momo_transactions_transaction_amount_ghs.19bb3dfa14: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "momo_analytics", "target_name": "dev", "node_id": "test.momo_analytics.not_null_stg_momo_transactions_transaction_amount_ghs.19bb3dfa14"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select transaction_amount_ghs
+from "momo_warehouse"."momo_dw_staging"."stg_momo_transactions"
+where transaction_amount_ghs is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m01:02:37.607862 [debug] [Thread-2 (]: Using postgres connection "test.momo_analytics.accepted_values_stg_momo_transactions_transaction_status__SUCCESS__FAILED__PENDING__REVERSED.f9015f2ebf"
+[0m01:02:37.608860 [debug] [Thread-4 (]: Using postgres connection "test.momo_analytics.not_null_stg_momo_transactions_transaction_id.289b52c0c4"
+[0m01:02:37.609859 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m01:02:37.610862 [debug] [Thread-2 (]: On test.momo_analytics.accepted_values_stg_momo_transactions_transaction_status__SUCCESS__FAILED__PENDING__REVERSED.f9015f2ebf: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "momo_analytics", "target_name": "dev", "node_id": "test.momo_analytics.accepted_values_stg_momo_transactions_transaction_status__SUCCESS__FAILED__PENDING__REVERSED.f9015f2ebf"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with all_values as (
+
+    select
+        transaction_status as value_field,
+        count(*) as n_records
+
+    from "momo_warehouse"."momo_dw_staging"."stg_momo_transactions"
+    group by transaction_status
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'SUCCESS','FAILED','PENDING','REVERSED'
+)
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m01:02:37.612862 [debug] [Thread-4 (]: On test.momo_analytics.not_null_stg_momo_transactions_transaction_id.289b52c0c4: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "momo_analytics", "target_name": "dev", "node_id": "test.momo_analytics.not_null_stg_momo_transactions_transaction_id.289b52c0c4"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select transaction_id
+from "momo_warehouse"."momo_dw_staging"."stg_momo_transactions"
+where transaction_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m01:02:37.615866 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m01:02:37.616858 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m01:02:37.670858 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.092 seconds
+[0m01:02:37.679870 [debug] [Thread-1 (]: On test.momo_analytics.accepted_values_stg_momo_transactions_operator__MTN__VODAFONE__AIRTELTIGO.bc2f48c11a: ROLLBACK
+[0m01:02:37.681871 [debug] [Thread-1 (]: On test.momo_analytics.accepted_values_stg_momo_transactions_operator__MTN__VODAFONE__AIRTELTIGO.bc2f48c11a: Close
+[0m01:02:37.683870 [info ] [Thread-1 (]: 1 of 5 PASS accepted_values_stg_momo_transactions_operator__MTN__VODAFONE__AIRTELTIGO  [[32mPASS[0m in 0.22s]
+[0m01:02:37.686870 [debug] [Thread-1 (]: Finished running node test.momo_analytics.accepted_values_stg_momo_transactions_operator__MTN__VODAFONE__AIRTELTIGO.bc2f48c11a
+[0m01:02:37.688869 [debug] [Thread-1 (]: Began running node test.momo_analytics.unique_stg_momo_transactions_transaction_id.65e7b5d6c5
+[0m01:02:37.689871 [info ] [Thread-1 (]: 5 of 5 START test unique_stg_momo_transactions_transaction_id .................. [RUN]
+[0m01:02:37.693389 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.momo_analytics.accepted_values_stg_momo_transactions_operator__MTN__VODAFONE__AIRTELTIGO.bc2f48c11a, now test.momo_analytics.unique_stg_momo_transactions_transaction_id.65e7b5d6c5)
+[0m01:02:37.695770 [debug] [Thread-1 (]: Began compiling node test.momo_analytics.unique_stg_momo_transactions_transaction_id.65e7b5d6c5
+[0m01:02:37.709764 [debug] [Thread-1 (]: Writing injected SQL for node "test.momo_analytics.unique_stg_momo_transactions_transaction_id.65e7b5d6c5"
+[0m01:02:37.710764 [debug] [Thread-3 (]: SQL status: SELECT 1 in 0.101 seconds
+[0m01:02:37.714768 [debug] [Thread-3 (]: On test.momo_analytics.not_null_stg_momo_transactions_transaction_amount_ghs.19bb3dfa14: ROLLBACK
+[0m01:02:37.715772 [debug] [Thread-4 (]: SQL status: SELECT 1 in 0.099 seconds
+[0m01:02:37.716767 [debug] [Thread-1 (]: Began executing node test.momo_analytics.unique_stg_momo_transactions_transaction_id.65e7b5d6c5
+[0m01:02:37.717770 [debug] [Thread-3 (]: On test.momo_analytics.not_null_stg_momo_transactions_transaction_amount_ghs.19bb3dfa14: Close
+[0m01:02:37.718772 [debug] [Thread-4 (]: On test.momo_analytics.not_null_stg_momo_transactions_transaction_id.289b52c0c4: ROLLBACK
+[0m01:02:37.722767 [debug] [Thread-1 (]: Writing runtime sql for node "test.momo_analytics.unique_stg_momo_transactions_transaction_id.65e7b5d6c5"
+[0m01:02:37.722767 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.108 seconds
+[0m01:02:37.723765 [info ] [Thread-3 (]: 3 of 5 PASS not_null_stg_momo_transactions_transaction_amount_ghs .............. [[32mPASS[0m in 0.26s]
+[0m01:02:37.724768 [debug] [Thread-4 (]: On test.momo_analytics.not_null_stg_momo_transactions_transaction_id.289b52c0c4: Close
+[0m01:02:37.727766 [debug] [Thread-2 (]: On test.momo_analytics.accepted_values_stg_momo_transactions_transaction_status__SUCCESS__FAILED__PENDING__REVERSED.f9015f2ebf: ROLLBACK
+[0m01:02:37.728767 [debug] [Thread-3 (]: Finished running node test.momo_analytics.not_null_stg_momo_transactions_transaction_amount_ghs.19bb3dfa14
+[0m01:02:37.729766 [debug] [Thread-1 (]: Using postgres connection "test.momo_analytics.unique_stg_momo_transactions_transaction_id.65e7b5d6c5"
+[0m01:02:37.730764 [info ] [Thread-4 (]: 4 of 5 PASS not_null_stg_momo_transactions_transaction_id ...................... [[32mPASS[0m in 0.26s]
+[0m01:02:37.731768 [debug] [Thread-2 (]: On test.momo_analytics.accepted_values_stg_momo_transactions_transaction_status__SUCCESS__FAILED__PENDING__REVERSED.f9015f2ebf: Close
+[0m01:02:37.733766 [debug] [Thread-1 (]: On test.momo_analytics.unique_stg_momo_transactions_transaction_id.65e7b5d6c5: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "momo_analytics", "target_name": "dev", "node_id": "test.momo_analytics.unique_stg_momo_transactions_transaction_id.65e7b5d6c5"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    transaction_id as unique_field,
+    count(*) as n_records
+
+from "momo_warehouse"."momo_dw_staging"."stg_momo_transactions"
+where transaction_id is not null
+group by transaction_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m01:02:37.735768 [debug] [Thread-4 (]: Finished running node test.momo_analytics.not_null_stg_momo_transactions_transaction_id.289b52c0c4
+[0m01:02:37.737769 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m01:02:37.737769 [info ] [Thread-2 (]: 2 of 5 PASS accepted_values_stg_momo_transactions_transaction_status__SUCCESS__FAILED__PENDING__REVERSED  [[32mPASS[0m in 0.27s]
+[0m01:02:37.740769 [debug] [Thread-2 (]: Finished running node test.momo_analytics.accepted_values_stg_momo_transactions_transaction_status__SUCCESS__FAILED__PENDING__REVERSED.f9015f2ebf
+[0m01:02:37.871142 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.133 seconds
+[0m01:02:37.873140 [debug] [Thread-1 (]: On test.momo_analytics.unique_stg_momo_transactions_transaction_id.65e7b5d6c5: ROLLBACK
+[0m01:02:37.874143 [debug] [Thread-1 (]: On test.momo_analytics.unique_stg_momo_transactions_transaction_id.65e7b5d6c5: Close
+[0m01:02:37.875143 [info ] [Thread-1 (]: 5 of 5 PASS unique_stg_momo_transactions_transaction_id ........................ [[32mPASS[0m in 0.18s]
+[0m01:02:37.877156 [debug] [Thread-1 (]: Finished running node test.momo_analytics.unique_stg_momo_transactions_transaction_id.65e7b5d6c5
+[0m01:02:37.880160 [debug] [MainThread]: On master: COMMIT
+[0m01:02:37.881155 [debug] [MainThread]: Using postgres connection "master"
+[0m01:02:37.882156 [debug] [MainThread]: On master: COMMIT
+[0m01:02:37.884159 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m01:02:37.940686 [debug] [MainThread]: SQL status: COMMIT in 0.057 seconds
+[0m01:02:37.940686 [debug] [MainThread]: On master: Close
+[0m01:02:37.941688 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m01:02:37.942691 [debug] [MainThread]: Connection 'list_momo_warehouse_momo_dw_staging' was properly closed.
+[0m01:02:37.942691 [debug] [MainThread]: Connection 'list_momo_warehouse_momo_dw_marts' was properly closed.
+[0m01:02:37.943689 [debug] [MainThread]: Connection 'test.momo_analytics.unique_stg_momo_transactions_transaction_id.65e7b5d6c5' was properly closed.
+[0m01:02:37.943689 [debug] [MainThread]: Connection 'test.momo_analytics.accepted_values_stg_momo_transactions_transaction_status__SUCCESS__FAILED__PENDING__REVERSED.f9015f2ebf' was properly closed.
+[0m01:02:37.945686 [debug] [MainThread]: Connection 'test.momo_analytics.not_null_stg_momo_transactions_transaction_amount_ghs.19bb3dfa14' was properly closed.
+[0m01:02:37.945686 [debug] [MainThread]: Connection 'test.momo_analytics.not_null_stg_momo_transactions_transaction_id.289b52c0c4' was properly closed.
+[0m01:02:37.946683 [info ] [MainThread]: 
+[0m01:02:37.947687 [info ] [MainThread]: Finished running 5 data tests in 0 hours 0 minutes and 0.96 seconds (0.96s).
+[0m01:02:37.949684 [debug] [MainThread]: Command end result
+[0m01:02:37.988694 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\DELL\Documents\Ghana-Momo-ETL-Pipeline\dbt\target\manifest.json
+[0m01:02:37.991208 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\DELL\Documents\Ghana-Momo-ETL-Pipeline\dbt\target\semantic_manifest.json
+[0m01:02:38.000224 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\DELL\Documents\Ghana-Momo-ETL-Pipeline\dbt\target\run_results.json
+[0m01:02:38.001225 [info ] [MainThread]: 
+[0m01:02:38.001225 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m01:02:38.002225 [info ] [MainThread]: 
+[0m01:02:38.003226 [info ] [MainThread]: Done. PASS=5 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=5
+[0m01:02:38.005225 [debug] [MainThread]: Command `dbt test` succeeded at 01:02:38.005225 after 2.49 seconds
+[0m01:02:38.006226 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A4B3A53390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A4B3CDB810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A4B3A5C2D0>]}
+[0m01:02:38.006226 [debug] [MainThread]: Flushing usage events
+[0m01:02:41.346383 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m01:02:58.008087 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000216065DF710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002160555D390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002160555D6D0>]}
+
+
+============================== 01:02:58.012445 | ecffb6e0-a729-4278-8171-686cbc9fdcbd ==============================
+[0m01:02:58.012445 [info ] [MainThread]: Running with dbt=1.11.8
+[0m01:02:58.014445 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': '.', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'invocation_command': 'dbt docs generate --profiles-dir .', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\DELL\\Documents\\Ghana-Momo-ETL-Pipeline\\dbt\\logs'}
+[0m01:02:58.256364 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'ecffb6e0-a729-4278-8171-686cbc9fdcbd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002160679E9D0>]}
+[0m01:02:58.334886 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'ecffb6e0-a729-4278-8171-686cbc9fdcbd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021601D39590>]}
+[0m01:02:58.336889 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m01:02:58.802562 [debug] [MainThread]: checksum: 7d524ac048c2100769df89d592e662e060a73ca564e31bd9c2a37efdfe8d8ab6, vars: {}, profile: , target: , version: 1.11.8
+[0m01:02:58.981548 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m01:02:58.982541 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m01:02:58.982541 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m01:02:59.036543 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'ecffb6e0-a729-4278-8171-686cbc9fdcbd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021606B93E10>]}
+[0m01:03:00.037600 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'ecffb6e0-a729-4278-8171-686cbc9fdcbd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021606B61BD0>]}
+[0m01:03:00.038599 [info ] [MainThread]: Found 5 models, 5 data tests, 1 source, 465 macros
+[0m01:03:00.040601 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ecffb6e0-a729-4278-8171-686cbc9fdcbd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021601EBF890>]}
+[0m01:03:00.045599 [info ] [MainThread]: 
+[0m01:03:00.046603 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m01:03:00.049601 [info ] [MainThread]: 
+[0m01:03:00.051606 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m01:03:00.060613 [debug] [ThreadPool]: Acquiring new postgres connection 'list_momo_warehouse_momo_dw_marts'
+[0m01:03:00.063613 [debug] [ThreadPool]: Acquiring new postgres connection 'list_momo_warehouse_momo_dw_staging'
+[0m01:03:00.313757 [debug] [ThreadPool]: Using postgres connection "list_momo_warehouse_momo_dw_marts"
+[0m01:03:00.314772 [debug] [ThreadPool]: Using postgres connection "list_momo_warehouse_momo_dw_staging"
+[0m01:03:00.315756 [debug] [ThreadPool]: On list_momo_warehouse_momo_dw_marts: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "momo_analytics", "target_name": "dev", "connection_name": "list_momo_warehouse_momo_dw_marts"} */
+select
+      'momo_warehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'momo_dw_marts'
+    union all
+    select
+      'momo_warehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'momo_dw_marts'
+    union all
+    select
+      'momo_warehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'momo_dw_marts'
+  
+[0m01:03:00.316762 [debug] [ThreadPool]: On list_momo_warehouse_momo_dw_staging: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "momo_analytics", "target_name": "dev", "connection_name": "list_momo_warehouse_momo_dw_staging"} */
+select
+      'momo_warehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'momo_dw_staging'
+    union all
+    select
+      'momo_warehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'momo_dw_staging'
+    union all
+    select
+      'momo_warehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'momo_dw_staging'
+  
+[0m01:03:00.318755 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m01:03:00.318755 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m01:03:00.404013 [debug] [ThreadPool]: SQL status: SELECT 1 in 0.085 seconds
+[0m01:03:00.406015 [debug] [ThreadPool]: On list_momo_warehouse_momo_dw_staging: ROLLBACK
+[0m01:03:00.406015 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.088 seconds
+[0m01:03:00.407015 [debug] [ThreadPool]: On list_momo_warehouse_momo_dw_staging: Close
+[0m01:03:00.408018 [debug] [ThreadPool]: On list_momo_warehouse_momo_dw_marts: ROLLBACK
+[0m01:03:00.411012 [debug] [ThreadPool]: On list_momo_warehouse_momo_dw_marts: Close
+[0m01:03:00.419011 [debug] [MainThread]: Using postgres connection "master"
+[0m01:03:00.420014 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "momo_analytics", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m01:03:00.421012 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m01:03:00.482530 [debug] [MainThread]: SQL status: SELECT 1 in 0.061 seconds
+[0m01:03:00.483529 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ecffb6e0-a729-4278-8171-686cbc9fdcbd', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021606B6C650>]}
+[0m01:03:00.484526 [debug] [MainThread]: On master: ROLLBACK
+[0m01:03:00.485528 [debug] [MainThread]: On master: Close
+[0m01:03:00.491529 [debug] [Thread-1 (]: Began running node model.momo_analytics.stg_momo_transactions
+[0m01:03:00.492529 [debug] [Thread-1 (]: Acquiring new postgres connection 'model.momo_analytics.stg_momo_transactions'
+[0m01:03:00.493532 [debug] [Thread-1 (]: Began compiling node model.momo_analytics.stg_momo_transactions
+[0m01:03:00.501528 [debug] [Thread-1 (]: Writing injected SQL for node "model.momo_analytics.stg_momo_transactions"
+[0m01:03:00.503528 [debug] [Thread-1 (]: Began executing node model.momo_analytics.stg_momo_transactions
+[0m01:03:00.504530 [debug] [Thread-1 (]: Finished running node model.momo_analytics.stg_momo_transactions
+[0m01:03:00.505529 [debug] [Thread-3 (]: Began running node model.momo_analytics.mart_daily_revenue
+[0m01:03:00.506527 [debug] [Thread-4 (]: Began running node model.momo_analytics.mart_high_value_transactions
+[0m01:03:00.506998 [debug] [Thread-2 (]: Began running node model.momo_analytics.mart_operator_performance
+[0m01:03:00.506998 [debug] [Thread-1 (]: Began running node model.momo_analytics.mart_region_summary
+[0m01:03:00.508041 [debug] [Thread-3 (]: Acquiring new postgres connection 'model.momo_analytics.mart_daily_revenue'
+[0m01:03:00.509006 [debug] [Thread-4 (]: Acquiring new postgres connection 'model.momo_analytics.mart_high_value_transactions'
+[0m01:03:00.510047 [debug] [Thread-2 (]: Acquiring new postgres connection 'model.momo_analytics.mart_operator_performance'
+[0m01:03:00.511011 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.momo_analytics.stg_momo_transactions, now model.momo_analytics.mart_region_summary)
+[0m01:03:00.511011 [debug] [Thread-3 (]: Began compiling node model.momo_analytics.mart_daily_revenue
+[0m01:03:00.512042 [debug] [Thread-4 (]: Began compiling node model.momo_analytics.mart_high_value_transactions
+[0m01:03:00.513014 [debug] [Thread-2 (]: Began compiling node model.momo_analytics.mart_operator_performance
+[0m01:03:00.514010 [debug] [Thread-1 (]: Began compiling node model.momo_analytics.mart_region_summary
+[0m01:03:00.518044 [debug] [Thread-3 (]: Writing injected SQL for node "model.momo_analytics.mart_daily_revenue"
+[0m01:03:00.522040 [debug] [Thread-4 (]: Writing injected SQL for node "model.momo_analytics.mart_high_value_transactions"
+[0m01:03:00.525044 [debug] [Thread-2 (]: Writing injected SQL for node "model.momo_analytics.mart_operator_performance"
+[0m01:03:00.529012 [debug] [Thread-1 (]: Writing injected SQL for node "model.momo_analytics.mart_region_summary"
+[0m01:03:00.531010 [debug] [Thread-3 (]: Began executing node model.momo_analytics.mart_daily_revenue
+[0m01:03:00.532011 [debug] [Thread-4 (]: Began executing node model.momo_analytics.mart_high_value_transactions
+[0m01:03:00.533009 [debug] [Thread-3 (]: Finished running node model.momo_analytics.mart_daily_revenue
+[0m01:03:00.533009 [debug] [Thread-2 (]: Began executing node model.momo_analytics.mart_operator_performance
+[0m01:03:00.534041 [debug] [Thread-4 (]: Finished running node model.momo_analytics.mart_high_value_transactions
+[0m01:03:00.535034 [debug] [Thread-1 (]: Began executing node model.momo_analytics.mart_region_summary
+[0m01:03:00.536005 [debug] [Thread-3 (]: Began running node test.momo_analytics.accepted_values_stg_momo_transactions_operator__MTN__VODAFONE__AIRTELTIGO.bc2f48c11a
+[0m01:03:00.537007 [debug] [Thread-2 (]: Finished running node model.momo_analytics.mart_operator_performance
+[0m01:03:00.538003 [debug] [Thread-4 (]: Began running node test.momo_analytics.accepted_values_stg_momo_transactions_transaction_status__SUCCESS__FAILED__PENDING__REVERSED.f9015f2ebf
+[0m01:03:00.539010 [debug] [Thread-1 (]: Finished running node model.momo_analytics.mart_region_summary
+[0m01:03:00.540005 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.momo_analytics.mart_daily_revenue, now test.momo_analytics.accepted_values_stg_momo_transactions_operator__MTN__VODAFONE__AIRTELTIGO.bc2f48c11a)
+[0m01:03:00.540005 [debug] [Thread-2 (]: Began running node test.momo_analytics.not_null_stg_momo_transactions_transaction_amount_ghs.19bb3dfa14
+[0m01:03:00.541040 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.momo_analytics.mart_high_value_transactions, now test.momo_analytics.accepted_values_stg_momo_transactions_transaction_status__SUCCESS__FAILED__PENDING__REVERSED.f9015f2ebf)
+[0m01:03:00.542009 [debug] [Thread-1 (]: Began running node test.momo_analytics.not_null_stg_momo_transactions_transaction_id.289b52c0c4
+[0m01:03:00.543013 [debug] [Thread-3 (]: Began compiling node test.momo_analytics.accepted_values_stg_momo_transactions_operator__MTN__VODAFONE__AIRTELTIGO.bc2f48c11a
+[0m01:03:00.543013 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.momo_analytics.mart_operator_performance, now test.momo_analytics.not_null_stg_momo_transactions_transaction_amount_ghs.19bb3dfa14)
+[0m01:03:00.544006 [debug] [Thread-4 (]: Began compiling node test.momo_analytics.accepted_values_stg_momo_transactions_transaction_status__SUCCESS__FAILED__PENDING__REVERSED.f9015f2ebf
+[0m01:03:00.545006 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.momo_analytics.mart_region_summary, now test.momo_analytics.not_null_stg_momo_transactions_transaction_id.289b52c0c4)
+[0m01:03:00.559082 [debug] [Thread-3 (]: Writing injected SQL for node "test.momo_analytics.accepted_values_stg_momo_transactions_operator__MTN__VODAFONE__AIRTELTIGO.bc2f48c11a"
+[0m01:03:00.560249 [debug] [Thread-2 (]: Began compiling node test.momo_analytics.not_null_stg_momo_transactions_transaction_amount_ghs.19bb3dfa14
+[0m01:03:00.568219 [debug] [Thread-4 (]: Writing injected SQL for node "test.momo_analytics.accepted_values_stg_momo_transactions_transaction_status__SUCCESS__FAILED__PENDING__REVERSED.f9015f2ebf"
+[0m01:03:00.569209 [debug] [Thread-1 (]: Began compiling node test.momo_analytics.not_null_stg_momo_transactions_transaction_id.289b52c0c4
+[0m01:03:00.578833 [debug] [Thread-2 (]: Writing injected SQL for node "test.momo_analytics.not_null_stg_momo_transactions_transaction_amount_ghs.19bb3dfa14"
+[0m01:03:00.579806 [debug] [Thread-3 (]: Began executing node test.momo_analytics.accepted_values_stg_momo_transactions_operator__MTN__VODAFONE__AIRTELTIGO.bc2f48c11a
+[0m01:03:00.584801 [debug] [Thread-1 (]: Writing injected SQL for node "test.momo_analytics.not_null_stg_momo_transactions_transaction_id.289b52c0c4"
+[0m01:03:00.585591 [debug] [Thread-4 (]: Began executing node test.momo_analytics.accepted_values_stg_momo_transactions_transaction_status__SUCCESS__FAILED__PENDING__REVERSED.f9015f2ebf
+[0m01:03:00.586599 [debug] [Thread-3 (]: Finished running node test.momo_analytics.accepted_values_stg_momo_transactions_operator__MTN__VODAFONE__AIRTELTIGO.bc2f48c11a
+[0m01:03:00.587598 [debug] [Thread-2 (]: Began executing node test.momo_analytics.not_null_stg_momo_transactions_transaction_amount_ghs.19bb3dfa14
+[0m01:03:00.588369 [debug] [Thread-4 (]: Finished running node test.momo_analytics.accepted_values_stg_momo_transactions_transaction_status__SUCCESS__FAILED__PENDING__REVERSED.f9015f2ebf
+[0m01:03:00.589377 [debug] [Thread-1 (]: Began executing node test.momo_analytics.not_null_stg_momo_transactions_transaction_id.289b52c0c4
+[0m01:03:00.590379 [debug] [Thread-3 (]: Began running node test.momo_analytics.unique_stg_momo_transactions_transaction_id.65e7b5d6c5
+[0m01:03:00.591378 [debug] [Thread-2 (]: Finished running node test.momo_analytics.not_null_stg_momo_transactions_transaction_amount_ghs.19bb3dfa14
+[0m01:03:00.592381 [debug] [Thread-1 (]: Finished running node test.momo_analytics.not_null_stg_momo_transactions_transaction_id.289b52c0c4
+[0m01:03:00.593379 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.momo_analytics.accepted_values_stg_momo_transactions_operator__MTN__VODAFONE__AIRTELTIGO.bc2f48c11a, now test.momo_analytics.unique_stg_momo_transactions_transaction_id.65e7b5d6c5)
+[0m01:03:00.594378 [debug] [Thread-3 (]: Began compiling node test.momo_analytics.unique_stg_momo_transactions_transaction_id.65e7b5d6c5
+[0m01:03:00.602414 [debug] [Thread-3 (]: Writing injected SQL for node "test.momo_analytics.unique_stg_momo_transactions_transaction_id.65e7b5d6c5"
+[0m01:03:00.603413 [debug] [Thread-3 (]: Began executing node test.momo_analytics.unique_stg_momo_transactions_transaction_id.65e7b5d6c5
+[0m01:03:00.604412 [debug] [Thread-3 (]: Finished running node test.momo_analytics.unique_stg_momo_transactions_transaction_id.65e7b5d6c5
+[0m01:03:00.606379 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m01:03:00.607377 [debug] [MainThread]: Connection 'list_momo_warehouse_momo_dw_marts' was properly closed.
+[0m01:03:00.607377 [debug] [MainThread]: Connection 'list_momo_warehouse_momo_dw_staging' was properly closed.
+[0m01:03:00.608376 [debug] [MainThread]: Connection 'test.momo_analytics.not_null_stg_momo_transactions_transaction_id.289b52c0c4' was properly closed.
+[0m01:03:00.608376 [debug] [MainThread]: Connection 'test.momo_analytics.unique_stg_momo_transactions_transaction_id.65e7b5d6c5' was properly closed.
+[0m01:03:00.609377 [debug] [MainThread]: Connection 'test.momo_analytics.accepted_values_stg_momo_transactions_transaction_status__SUCCESS__FAILED__PENDING__REVERSED.f9015f2ebf' was properly closed.
+[0m01:03:00.609377 [debug] [MainThread]: Connection 'test.momo_analytics.not_null_stg_momo_transactions_transaction_amount_ghs.19bb3dfa14' was properly closed.
+[0m01:03:00.612378 [debug] [MainThread]: Command end result
+[0m01:03:00.729974 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\DELL\Documents\Ghana-Momo-ETL-Pipeline\dbt\target\manifest.json
+[0m01:03:00.732973 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\DELL\Documents\Ghana-Momo-ETL-Pipeline\dbt\target\semantic_manifest.json
+[0m01:03:00.741014 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\DELL\Documents\Ghana-Momo-ETL-Pipeline\dbt\target\run_results.json
+[0m01:03:01.476038 [debug] [MainThread]: Acquiring new postgres connection 'generate_catalog'
+[0m01:03:01.481070 [info ] [MainThread]: Building catalog
+[0m01:03:01.493046 [debug] [ThreadPool]: Acquiring new postgres connection 'momo_warehouse.information_schema'
+[0m01:03:01.552047 [debug] [ThreadPool]: Using postgres connection "momo_warehouse.information_schema"
+[0m01:03:01.553052 [debug] [ThreadPool]: On momo_warehouse.information_schema: /* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "momo_analytics", "target_name": "dev", "connection_name": "momo_warehouse.information_schema"} */
+
+    
+    
+
+    select
+        'momo_warehouse' as table_database,
+        sch.nspname as table_schema,
+        tbl.relname as table_name,
+        case tbl.relkind
+            when 'v' then 'VIEW'
+            when 'm' then 'MATERIALIZED VIEW'
+            else 'BASE TABLE'
+        end as table_type,
+        tbl_desc.description as table_comment,
+        col.attname as column_name,
+        col.attnum as column_index,
+        pg_catalog.format_type(col.atttypid, col.atttypmod) as column_type,
+        col_desc.description as column_comment,
+        pg_get_userbyid(tbl.relowner) as table_owner
+
+    from pg_catalog.pg_namespace sch
+    join pg_catalog.pg_class tbl on tbl.relnamespace = sch.oid
+    join pg_catalog.pg_attribute col on col.attrelid = tbl.oid
+    left outer join pg_catalog.pg_description tbl_desc on (tbl_desc.objoid = tbl.oid and tbl_desc.objsubid = 0)
+    left outer join pg_catalog.pg_description col_desc on (col_desc.objoid = tbl.oid and col_desc.objsubid = col.attnum)
+    where ((upper(sch.nspname) = upper('momo_dw_staging') and
+           upper(tbl.relname) = upper('stg_momo_transactions')) or (upper(sch.nspname) = upper('momo_dw_marts') and
+           upper(tbl.relname) = upper('mart_high_value_transactions')) or (upper(sch.nspname) = upper('momo_dw_marts') and
+           upper(tbl.relname) = upper('mart_region_summary')) or (upper(sch.nspname) = upper('momo_dw_marts') and
+           upper(tbl.relname) = upper('mart_daily_revenue')) or (upper(sch.nspname) = upper('momo_dw_marts') and
+           upper(tbl.relname) = upper('mart_operator_performance')) or (upper(sch.nspname) = upper('momo_dw') and
+           upper(tbl.relname) = upper('fact_transactions')))
+      and not pg_is_other_temp_schema(sch.oid) -- not a temporary schema belonging to another session
+      and tbl.relpersistence in ('p', 'u') -- [p]ermanent table or [u]nlogged table. Exclude [t]emporary tables
+      and tbl.relkind in ('r', 'v', 'f', 'p', 'm') -- o[r]dinary table, [v]iew, [f]oreign table, [p]artitioned table, [m]aterialized view. Other values are [i]ndex, [S]equence, [c]omposite type, [t]OAST table
+      and col.attnum > 0 -- negative numbers are used for system columns such as oid
+      and not col.attisdropped -- column as not been dropped
+
+    order by
+        sch.nspname,
+        tbl.relname,
+        col.attnum
+[0m01:03:01.554082 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m01:03:01.635941 [debug] [ThreadPool]: SQL status: SELECT 121 in 0.082 seconds
+[0m01:03:01.641938 [debug] [ThreadPool]: On momo_warehouse.information_schema: ROLLBACK
+[0m01:03:01.642952 [debug] [ThreadPool]: On momo_warehouse.information_schema: Close
+[0m01:03:01.667953 [debug] [MainThread]: Wrote artifact CatalogArtifact to C:\Users\DELL\Documents\Ghana-Momo-ETL-Pipeline\dbt\target\catalog.json
+[0m01:03:01.715609 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\DELL\Documents\Ghana-Momo-ETL-Pipeline\dbt\target\manifest.json
+[0m01:03:01.719704 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\DELL\Documents\Ghana-Momo-ETL-Pipeline\dbt\target\semantic_manifest.json
+[0m01:03:01.720859 [info ] [MainThread]: Catalog written to C:\Users\DELL\Documents\Ghana-Momo-ETL-Pipeline\dbt\target\catalog.json
+[0m01:03:01.722515 [debug] [MainThread]: Command `dbt docs generate` succeeded at 01:03:01.722515 after 3.83 seconds
+[0m01:03:01.723081 [debug] [MainThread]: Connection 'generate_catalog' was properly closed.
+[0m01:03:01.723646 [debug] [MainThread]: Connection 'momo_warehouse.information_schema' was properly closed.
+[0m01:03:01.724698 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002160557D710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002167E8EC790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000216065CCD90>]}
+[0m01:03:01.725279 [debug] [MainThread]: Flushing usage events
+[0m01:03:03.565723 [debug] [MainThread]: An error was encountered while trying to flush usage events
