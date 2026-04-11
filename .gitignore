@@ -2,7 +2,12 @@ venv/
 .env
 __pycache__/
 *.pyc
+*.log
 pipeline.log
+kafka_simulator.log
 dbt/profiles.yml
 dbt/logs/
 dbt/.user.yml
+data/processed/
+data/raw/
+data/reports/
