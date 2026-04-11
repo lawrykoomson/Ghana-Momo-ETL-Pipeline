@@ -1,0 +1,13 @@
+2026-04-10 20:30:15,268 | INFO | Producer | Producer started — publishing to topic 'momo.transactions.live' at 5 msg/sec for 60s
+2026-04-10 20:30:15,270 | INFO | FraudDetector | Consumer started — monitoring partition 0 for fraud signals
+2026-04-10 20:30:15,274 | INFO | MetricsAggregator | Consumer started — aggregating metrics from partition 1
+2026-04-10 20:30:15,276 | INFO | TransactionLogger | Consumer started — logging transactions from partition 2 to data\reports\live_transactions.jsonl
+2026-04-10 20:30:23,117 | WARNING | FraudDetector | FRAUD ALERT | TXN-LIVE-00000040 | GHS 3,464.23 | HIGH_VALUE: GHS 3,464.23
+2026-04-10 20:30:31,580 | WARNING | FraudDetector | FRAUD ALERT | TXN-LIVE-00000082 | GHS 462.36 | FAILED_HIGH_AMOUNT: GHS 462.36
+2026-04-10 20:30:41,229 | WARNING | FraudDetector | FRAUD ALERT | TXN-LIVE-00000130 | GHS 2,630.72 | HIGH_VALUE: GHS 2,630.72
+2026-04-10 20:30:43,636 | WARNING | FraudDetector | FRAUD ALERT | TXN-LIVE-00000142 | GHS 338.32 | FAILED_HIGH_AMOUNT: GHS 338.32
+2026-04-10 20:30:50,254 | WARNING | FraudDetector | FRAUD ALERT | TXN-LIVE-00000175 | GHS 973.78 | HIGH_VALUE: GHS 973.78
+2026-04-10 20:31:05,320 | WARNING | FraudDetector | FRAUD ALERT | TXN-LIVE-00000250 | GHS 4,316.83 | HIGH_VALUE: GHS 4,316.83 + FAILED_HIGH_AMOUNT: GHS 4,316.83
+2026-04-10 20:31:06,555 | WARNING | FraudDetector | FRAUD ALERT | TXN-LIVE-00000256 | GHS 1,027.46 | HIGH_VALUE: GHS 1,027.46
+2026-04-10 20:31:12,572 | WARNING | FraudDetector | FRAUD ALERT | TXN-LIVE-00000286 | GHS 222.17 | FAILED_HIGH_AMOUNT: GHS 222.17
+2026-04-10 20:31:15,294 | INFO | Producer | Producer finished — published 298 transactions
